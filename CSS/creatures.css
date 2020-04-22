@@ -23,12 +23,12 @@ a1 {
 a2 {
   content: url("../AoN-PNGs/TwoActions.png");
   height: 1em;
-  padding: 0px 0.3em 0px 0.3em;
+  padding: 0px 0.1em 0px 0.2em;
 }
 a3 {
   content: url("../AoN-PNGs/ThreeActions.png");
   height: 1em;
-  padding: 0px 0.3em 0px 0.3em;
+  padding: 0px 0.1em 0px 0.2em;
 }
 creature {
   display: block;
