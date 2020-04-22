@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed|Tauri");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Tauri&display=swap');
 
 body {
   font-family: "Roboto Condensed", sans-serif;
@@ -60,6 +60,7 @@ level::before {
 traits {
   display: block;
   border-top: 1px black solid;
+  padding-top: 4px;
   font-size: 0.7em;
   font-family: "Roboto Condensed", sans-serif;
 }
@@ -78,7 +79,7 @@ size {
   margin-top: 2px;
   margin-right: 2px;
   min-width: 30px;
-  float: left;
+  /*float: left;*/
   margin-bottom: -5px;
   padding-left: 3px;
   padding-right: 3px;
@@ -98,4 +99,13 @@ alignment {
 }
 size {
   background-color: #3b7b59;
+}
+
+perception {
+    font-weight: normal;
+}
+perception::before {
+  content: "Perception ";
+  font-weight: 700;
+  font
 }
