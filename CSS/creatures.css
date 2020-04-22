@@ -39,6 +39,10 @@ creature hr {
   border-color: black;
   border-width: 0.5px;
 }
+magic {
+  font-style: italic;
+  color: goldenrod;
+}
 creature > name {
   display: inline;
   font-size: 1.17em;
