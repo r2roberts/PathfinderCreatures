@@ -2,12 +2,8 @@
 
 body {
   font-family: "Roboto Condensed", sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   background-color: #f0ece0;
-}
-creature hr {
-  border-color: black;
-  border-width: 0.5px;
 }
 r0 {
   content: url("../AoN-PNGs/Reaction.png");
@@ -36,7 +32,12 @@ a3 {
 }
 creature {
   display: block;
-  width: 30em;
+  width: 35em;
+  margin: 20px 0px 100px 50px;
+}
+creature hr {
+  border-color: black;
+  border-width: 0.5px;
 }
 creature > name {
   display: inline;
