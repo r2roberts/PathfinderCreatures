@@ -63,85 +63,16 @@ traits {
   font-size: 0.7em;
   font-family: "Roboto Condensed", sans-serif;
 }
-trait {
-  border-color: #dac68a;
-  border: 1px solid #dac68a;
-  border-left: 2px solid #dac68a;
-  border-right: 2px solid #dac68a;
-  border-radius: 2px;
-  background-color: #58180d;
-  color: white;
-  text-align: center;
-  margin-top: 2px;
-  margin-right: 2px;
-  min-width: 30px;
-  float: left;
-  margin-bottom: -5px;
-  padding-left: 3px;
-  padding-right: 3px;
-  text-transform: uppercase;
-}
-uncommon {
-  border-color: #dac68a;
-  border: 1px solid #dac68a;
-  border-left: 2px solid #dac68a;
-  border-right: 2px solid #dac68a;
-  border-radius: 2px;
-  background-color: #98513d;
-  color: white;
-  text-align: center;
-  margin-top: 2px;
-  margin-right: 2px;
-  min-width: 30px;
-  float: left;
-  margin-bottom: -5px;
-  padding-left: 3px;
-  padding-right: 3px;
-  text-transform: uppercase;
-}
-unique {
-  border-color: #dac68a;
-  border: 1px solid #dac68a;
-  border-left: 2px solid #dac68a;
-  border-right: 2px solid #dac68a;
-  border-radius: 2px;
-  background-color: #54166e;
-  color: white;
-  text-align: center;
-  margin-top: 2px;
-  margin-right: 2px;
-  min-width: 30px;
-  float: left;
-  margin-bottom: -5px;
-  padding-left: 3px;
-  padding-right: 3px;
-  text-transform: uppercase;
-}
-alignment {
-  border-color: #dac68a;
-  border: 1px solid #dac68a;
-  border-left: 2px solid #dac68a;
-  border-right: 2px solid #dac68a;
-  border-radius: 2px;
-  background-color: #576293;
-  color: white;
-  text-align: center;
-  margin-top: 2px;
-  margin-right: 2px;
-  min-width: 30px;
-  float: left;
-  margin-bottom: -5px;
-  padding-left: 3px;
-  padding-right: 3px;
-  text-transform: uppercase;
-}
+trait,
+uncommon,
+unique,
+alignment,
 size {
   border-color: #dac68a;
   border: 1px solid #dac68a;
   border-left: 2px solid #dac68a;
   border-right: 2px solid #dac68a;
   border-radius: 2px;
-  background-color: #3b7b59;
   color: white;
   text-align: center;
   margin-top: 2px;
@@ -152,4 +83,19 @@ size {
   padding-left: 3px;
   padding-right: 3px;
   text-transform: uppercase;
+}
+trait {
+  background-color: #58180d;
+}
+uncommon {
+  background-color: #98513d;
+}
+unique {
+  background-color: #54166e;
+}
+alignment {
+  background-color: #576293;
+}
+size {
+  background-color: #3b7b59;
 }
