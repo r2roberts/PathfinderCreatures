@@ -12,16 +12,67 @@
         Charau-ka Dragon Priest
       </name>
       <level>6</level>
-      <traits>
-        <uncommon>UNCOMMON</uncommon>
-        <alignment>CE</alignment>
-        <size>SMALL</size>
-        <trait>CHARAU-KA</trait>
-        <trait>DRAGON</trait>
-        <trait>FIRE</trait>
-        <trait>HUMANOID</trait>
-      </traits>
-      <perception>+15; darkvision, scent (impercise) 30 feet</perception>
+      <stats>
+        <traits>
+          <uncommon>UNCOMMON</uncommon>
+          <alignment>CE</alignment>
+          <size>SMALL</size>
+          <trait>CHARAU-KA</trait>
+          <trait>DRAGON</trait>
+          <trait>FIRE</trait>
+          <trait>HUMANOID</trait>
+        </traits>
+        <perception>+15; darkvision, scent (impercise) 30 feet</perception>
+        <languages>Abyssal, Draconic, Mwangi</languages>
+        <skills>
+          <skill>
+            Acrobatics +12,
+          </skill>
+          <skill>
+            Athletics +13,
+          </skill>
+          <skill>
+            Intimidation +15,
+          </skill>
+          <skill>
+            Religion +15,
+          </skill>
+          <skill>
+            Survival +13
+          </skill>
+        </skills>
+        <str>+4</str>
+        <dex>+3</dex>
+        <con>+2</con>
+        <int>+0</int>
+        <wis>+5</wis>
+        <cha>+3</cha>
+        <items>leather armor, <em>+1 striking longsword</em> </items>
+      </stats>
+      <stats>
+        <div>
+          <ac>23</ac>
+          <fort>+14</fort>
+          <ref>+12</ref>
+          <will>+15</will>
+        </div>
+        <rule>
+          <hp>90</hp>
+          <immunities>fire, paralyzed, sleep</immunities>
+        </rule>
+        <rule>
+          <strong>Twisting Tail</strong> <r0></r0>
+          <trigger>
+            A creature within reach of the priest’s tail uses a move action or
+            leaves a square during a move action it’s using.
+          </trigger>
+          <effect>
+            The priest makes a tail Strike at the creature with a –2 penalty. If
+            it hits, it disrupts the creature’s action.
+          </effect>
+        </rule>
+      </stats>
+      <stats></stats>
     </creature>
   </body>
 </html>
