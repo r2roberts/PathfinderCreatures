@@ -38,7 +38,7 @@ creature {
   display: block;
   width: 30em;
 }
-name {
+creature > name {
   display: inline;
   font-size: 1.17em;
   margin-left: 0;
@@ -111,7 +111,9 @@ perception,
 languages,
 skills,
 items,
-rule {
+rule,
+melee,
+ranged {
   display: block;
   padding-left: 1.5em;
   text-indent: -1.5em;
@@ -119,6 +121,9 @@ rule {
   padding-top: 0;
   margin-top: 0;
   margin-bottom: 0;
+}
+rule > name {
+  font-weight: bold;
 }
 perception::before {
   content: "Perception ";
@@ -212,5 +217,65 @@ trigger::before {
 }
 effect::before {
   content: "Effect ";
+  font-weight: bold;
+}
+speed::before {
+  content: "Speed ";
+  font-weight: bold;
+}
+melee::before {
+  content: "Melee ";
+  font-weight: bold;
+}
+ranged::before {
+  content: "Ranged ";
+  font-weight: bold;
+}
+damage::before {
+  content: "Damage ";
+  font-weight: bold;
+}
+dc::before {
+  content: "DC ";
+  font-weight: normal;
+}
+s4,
+s3,
+s2,
+s1,
+cantrips {
+  font-style: italic;
+}
+s4::before {
+  content: "4th ";
+  font-weight: bold;
+  font-style: normal;
+}
+s3::before {
+  content: "3rd ";
+  font-weight: bold;
+  font-style: normal;
+}
+s2::before {
+  content: "2nd ";
+  font-weight: bold;
+  font-style: normal;
+}
+s1::before {
+  content: "1st ";
+  font-weight: bold;
+  font-style: normal;
+}
+cantrips[level]::before {
+  content: "Cantrips (" attr(level) ")";
+  font-weight: bold;
+  font-style: normal;
+}
+frequency::before {
+  content: "Frequency ";
+  font-weight: bold;
+}
+requirement::before {
+  content: "Requirement ";
   font-weight: bold;
 }

@@ -61,7 +61,7 @@
           <immunities>fire, paralyzed, sleep</immunities>
         </rule>
         <rule>
-          <strong>Twisting Tail</strong> <r0></r0>
+          <name>Twisting Tail</name> <r0></r0>
           <trigger>
             A creature within reach of the priest’s tail uses a move action or
             leaves a square during a move action it’s using.
@@ -72,7 +72,89 @@
           </effect>
         </rule>
       </stats>
-      <stats></stats>
+      <stats>
+        <speed>25 feet, climb 25 feet</speed>
+        <melee>
+          <a1></a1><em>longsword </em>(magical, versatile P) +17,
+          <damage>2d8+6 slashing</damage>
+        </melee>
+        <melee>
+          <a1></a1>bite +16,
+          <damage>1d10+6 piercing plus 1d6 fire</damage>
+        </melee>
+        <melee>
+          <a1></a1>claw +16 (agile),
+          <damage>1d10+6 slashing</damage>
+        </melee>
+        <melee>
+          <a1></a1>tail +16 (reach 10 feet),
+          <damage>1d8+6 slashing</damage>
+        </melee>
+        <ranged>
+          <a1></a1>thrown rock +15 (deadly d6, thrown 20 feet),
+          <damage>2d6+6 bludgeoning</damage>
+        </ranged>
+        <rule>
+          <name>Divine Prepared Spells</name>
+          <dc>25</dc>, attack +17;
+          <s3>fireball, vampiric touch;</s3>
+          <s2>flaming sphere, heal;</s2>
+          <s1>burning hands (x2), ray of enfeeblement;</s1>
+          <cantrips level="3rd">
+            daze, divine lance, produce flame, shield
+          </cantrips>
+        </rule>
+        <rule>
+          <name>Breath Weapon</name>
+          <a2></a2>
+          (divine, evocation, fire) The priest breathes fire that deals 7d6 fire
+          damage in a 30-foot cone (DC 23 basic Reflex save). It can’t use
+          Breath Weapon again for 1d4 rounds.
+        </rule>
+        <rule>
+          <name>
+            Shrieking Frenzy
+          </name>
+          <a0></a0>
+          (primal, transmutation);
+          <trigger>The charau-ka’s turn begins.au-ka’s turn begins. </trigger>
+          <frequency>
+            once per hour;
+          </frequency>
+          <effect>
+            The charau-ka is quickened until the end of its turn, and can use
+            the extra action to Stride or Strike. While in the frenzy, the
+            charau-ka can’t speak and automatically critically fails Stealth
+            checks, due to its loud wailing.
+          </effect>
+        </rule>
+        <rule>
+          <name>
+            Thrown Weapon Mastery
+          </name>
+          Any weapon a charau-ka throws gains the deadly d6 weapon trait.
+          Furthermore, when a charau-ka throws an improvised weapon, it does not
+          take the –2 penalty for doing so, nor does it take a penalty for using
+          a thrown improvised weapon with the nonlethal trait to make a lethal
+          attack.
+        </rule>
+        <rule>
+          <name>
+            Volcanic Eruption
+          </name>
+          <a3></a3>
+          (divine, evocation, fire)
+          <requirement>
+            The priest is standing on the ground.
+          </requirement>
+          <effect>
+            The priest slams his fists into the ground, causing fire to erupt
+            from the earth. Each non-worshipper of Dahak standing on the ground
+            in a 15-foot emanation must succeed at a DC 25 Reflex save or fall
+            prone and take 1d6 bludgeoning damage and 2d6 fire damage.
+          </effect>
+        </rule>
+      </stats>
     </creature>
   </body>
 </html>
