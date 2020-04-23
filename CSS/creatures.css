@@ -43,7 +43,7 @@ magic {
   font-style: italic;
   color: goldenrod;
 }
-creature > name {
+creature name {
   display: inline;
   font-size: 1.17em;
   margin-left: 0;
@@ -112,6 +112,8 @@ alignment {
 size {
   background-color: #3b7b59;
 }
+
+/* hanging indent */
 perception,
 languages,
 skills,
@@ -127,13 +129,15 @@ ranged {
   margin-top: 0;
   margin-bottom: 0;
 }
-rule > name {
-  font-weight: bold;
-}
 /* almost all before's are bold */
 ::before {
   font-weight: bold;
 }
+
+rule[name]::before {
+  content: attr(name) " ";
+}
+
 perception::before {
   content: "Perception ";
 }
