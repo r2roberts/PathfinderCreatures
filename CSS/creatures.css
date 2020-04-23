@@ -226,31 +226,19 @@ dc::before {
   content: "DC ";
   font-weight: normal;
 }
-s4,
-s3,
-s2,
-s1,
+
+/* Spells */
+
+spell,
 cantrips {
   font-style: italic;
 }
-s4::before,
-s3::before,
-s2::before,
-s1::before,
+spell,
 cantrips::before {
   font-style: normal;
 }
-s4::before {
-  content: "4th ";
-}
-s3::before {
-  content: "3rd ";
-}
-s2::before {
-  content: "2nd ";
-}
-s1::before {
-  content: "1st ";
+spell[level]::before {
+  content: attr(level) " ";
 }
 cantrips[level]::before {
   content: "Cantrips (" attr(level) ")";
