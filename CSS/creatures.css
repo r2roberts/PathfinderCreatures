@@ -233,7 +233,7 @@ spell,
 cantrips {
   font-style: italic;
 }
-spell,
+spell::before,
 cantrips::before {
   font-style: normal;
 }
