@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boggard Warrior (Elite)</title>
+    <link rel="stylesheet" href="CSS/creatures.css" />
+  </head>
+  <body>
+    <creature>
+      <name>
+        Boggard Warrior (Elite)
+      </name>
+      <level>3</level>
+      <stats>
+        <traits>
+          <alignment>CE</alignment>
+          <size>medium</size>
+          <trait>Boggard</trait>
+          <trait>HUMANOID</trait>
+        </traits>
+        <perception>+10; darkvision</perception>
+        <languages>Boggard, Draconic</languages>
+        <skills>
+          <skill>
+            Athletics +10,
+          </skill>
+          <skill>
+            Intimidation +7,
+          </skill>
+          <skill>
+            Stealth +8 (+10 in water)
+          </skill>
+        </skills>
+        <str>+4</str>
+        <dex>+0</dex>
+        <con>+4</con>
+        <int>-1</int>
+        <wis>+2</wis>
+        <cha>+1</cha>
+        <items>club, javelin (3), studded leather armor </items>
+      </stats>
+      <stats>
+        <div>
+          <ac>19</ac>
+          <fort>+12</fort>
+          <ref>+7</ref>
+          <will>+10</will>
+        </div>
+        <rule>
+          <hp>53</hp>
+        </rule>
+      </stats>
+      <stats>
+        <speed>20 feet, swim 25 feet; swamp stride</speed>
+        <melee>
+          <a1></a1>Club +12,
+          <damage>1d6+8 bludgeoning</damage>
+        </melee>
+        <melee>
+          <a1></a1>Tongue +12 (reach 10 feet),
+          <effect>
+            Tongue Grab
+          </effect>
+        </melee>
+        <ranged>
+          <a1></a1>Javelin +8 (thrown 30 feet),
+          <damage>1d6+6 piercing</damage>
+        </ranged>
+        <ranged>
+          <a1></a1>Club +8 (thrown 10 feet),
+          <damage>1d6+8 bludeoning</damage>
+        </ranged>
+        <rule>
+          <name>
+            Swamp Stride
+          </name>
+          A boggard warrior ignores difficult terrain caused by swamp terrain
+          features.
+        </rule>
+        <rule>
+          <name>
+            Terrifying Croak
+          </name>
+          <a1></a1> (auditory, emotion, fear, mental) The boggard warrior
+          unleashes a terrifying croak. Any non-boggard within 30 feet becomes
+          frightened 1 unless they succeed at a DC 20 Will save; those who
+          critically succeed are temporarily immune for 1 minute.
+        </rule>
+        <rule>
+          <name>
+            Tongue Grab
+          </name>
+          If the boggard warrior hits a creature with its tongue, that creature
+          becomes grabbed by the boggard. Unlike with a normal grab, the
+          creature isn’t immobilized, but it can’t move beyond the reach of the
+          boggard’s tongue. A creature can sever the tongue by hitting AC 17 and
+          dealing at least 4 slashing damage. Though this doesn’t deal any
+          damage to the boggard, it prevents it from using its tongue Strike
+          until it regrows its tongue, which takes a week.
+        </rule>
+      </stats>
+    </creature>
+  </body>
+</html>
