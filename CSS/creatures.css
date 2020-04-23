@@ -208,6 +208,12 @@ hp::after {
 immunities::before {
   content: "Immunities ";
 }
+weaknesses::before {
+  content: "Weaknesses ";
+}
+resistances::before {
+  content: "Resistances ";
+}
 trigger::before {
   content: "Trigger ";
 }
