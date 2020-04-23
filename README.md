@@ -9,5 +9,5 @@ The action icons were "borrowed" from the Archives of Nethys, http://2e.aonprd.c
 
 ## Usage: 
 
-Just clone this repository and click on the .html link to open them in your browser.
+Just clone this repository and click on the .html link to open it in your browser.
 You should be able to make a copy of the .html file and modify it for your needs.
