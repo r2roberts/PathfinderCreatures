@@ -130,48 +130,42 @@ ranged {
 rule > name {
   font-weight: bold;
 }
+/* almost all before's are bold */
+::before {
+  font-weight: bold;
+}
 perception::before {
   content: "Perception ";
-  font-weight: bold;
 }
 languages::before {
   content: "Languages ";
-  font-weight: bold;
 }
 skills::before {
   content: "Skills ";
-  font-weight: bold;
 }
 items::before {
   content: "Items ";
-  font-weight: bold;
 }
 skill {
   white-space: nowrap;
 }
 str::before {
   content: "Str ";
-  font-weight: bold;
 }
 dex::before {
   content: "Dex ";
-  font-weight: bold;
 }
 int::before {
   content: "Int ";
-  font-weight: bold;
 }
 con::before {
   content: "Con ";
-  font-weight: bold;
 }
 wis::before {
   content: "Wis ";
-  font-weight: bold;
 }
 cha::before {
   content: "Cha ";
-  font-weight: bold;
 }
 /* no after for cha */
 str::after,
@@ -183,19 +177,15 @@ wis::after {
 }
 ac::before {
   content: "AC ";
-  font-weight: bold;
 }
 fort::before {
   content: "Fort ";
-  font-weight: bold;
 }
 ref::before {
   content: "Ref ";
-  font-weight: bold;
 }
 will::before {
   content: "Will ";
-  font-weight: bold;
 }
 /* no Will after */
 ac::after {
@@ -207,38 +197,30 @@ ref::after {
 }
 hp::before {
   content: "HP ";
-  font-weight: bold;
 }
 hp::after {
   content: ";";
 }
 immunities::before {
   content: "Immunities ";
-  font-weight: bold;
 }
 trigger::before {
   content: "Trigger ";
-  font-weight: bold;
 }
 effect::before {
   content: "Effect ";
-  font-weight: bold;
 }
 speed::before {
   content: "Speed ";
-  font-weight: bold;
 }
 melee::before {
   content: "Melee ";
-  font-weight: bold;
 }
 ranged::before {
   content: "Ranged ";
-  font-weight: bold;
 }
 damage::before {
   content: "Damage ";
-  font-weight: bold;
 }
 dc::before {
   content: "DC ";
@@ -251,36 +233,31 @@ s1,
 cantrips {
   font-style: italic;
 }
+s4::before,
+s3::before,
+s2::before,
+s1::before,
+cantrips::before {
+  font-style: normal;
+}
 s4::before {
   content: "4th ";
-  font-weight: bold;
-  font-style: normal;
 }
 s3::before {
   content: "3rd ";
-  font-weight: bold;
-  font-style: normal;
 }
 s2::before {
   content: "2nd ";
-  font-weight: bold;
-  font-style: normal;
 }
 s1::before {
   content: "1st ";
-  font-weight: bold;
-  font-style: normal;
 }
 cantrips[level]::before {
   content: "Cantrips (" attr(level) ")";
-  font-weight: bold;
-  font-style: normal;
 }
 frequency::before {
   content: "Frequency ";
-  font-weight: bold;
 }
 requirement::before {
   content: "Requirement ";
-  font-weight: bold;
 }
