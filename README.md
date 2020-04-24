@@ -14,4 +14,4 @@ You should be able to make a copy of the .html file and modify it for your needs
 
 # Non-Commercial Use Only
 
-This project uses trademarks and/or copyrights owned by Paizo Inc., which are used under Paizo's Community Use Policy. We are expressly prohibited from charging you to use or access this content. This product is not published, endorsed, or specifically approved by Paizo Inc. For more information about Paizo's Community Use Policy, please visit paizo.com/communityuse. For more information about Paizo Inc. and Paizo products, please visit paizo.com.
+This project uses trademarks and/or copyrights owned by Paizo Inc., which are used under Paizo's Community Use Policy. We are expressly prohibited from charging you to use or access this content. This product is not published, endorsed, or specifically approved by Paizo Inc. For more information about Paizo's Community Use Policy, please visit http://paizo.com/communityuse. For more information about Paizo Inc. and Paizo products, please visit http://paizo.com.
