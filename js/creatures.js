@@ -6,22 +6,39 @@ String.prototype.format = function () {
   return a;
 };
 
-function addSpellLinks() {
+function addSpellLinksTo(spellsElems) {
   const spellUrl = "http://2e.aonprd.com/Spells.aspx?ID={0}";
 
-  const spellElems = document.getElementsByTagName("spell");
-  for (let i = 0; i < spellElems.length; i++) {
-    const spellElem = spellElems[i];
-    const id = spellElem.getAttribute("spellid");
+  for (let j = 0; j < spellsElems.length; j++) {
+    spellsElem = spellsElems[j];
 
-    if (id !== null) {
-      const a = document.createElement("a");
-      a.href = spellUrl.format(id);
-      a.textContent = spellElem.textContent;
-      spellElem.textContent = null;
-      spellElem.appendChild(a);
+    const spellElems = spellsElem.getElementsByTagName("spell");
+    for (let i = 0; i < spellElems.length; i++) {
+      const spellElem = spellElems[i];
+      const id = spellElem.getAttribute("spellid");
+
+      if (id !== null) {
+        const a = document.createElement("a");
+        a.href = spellUrl.format(id);
+        a.textContent = spellElem.textContent;
+        spellElem.textContent = null;
+        spellElem.appendChild(a);
+
+        if (i == spellElems.length - 1) {
+          a.textContent += ";";
+        } else {
+          a.textContent += ",";
+        }
+      }
     }
   }
+}
+
+function addSpellLinks() {
+  const spellsElems = document.getElementsByTagName("spells");
+  addSpellLinksTo(spellsElems);
+  const cantripsElems = document.getElementsByTagName("cantrips");
+  addSpellLinksTo(cantripsElems);
 }
 
 document.addEventListener("DOMContentLoaded", addSpellLinks);

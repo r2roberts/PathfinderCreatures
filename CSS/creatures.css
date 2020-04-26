@@ -252,6 +252,7 @@ spells[level]::before {
 }
 cantrips[level]::before {
   content: "Cantrips (" attr(level) ")";
+  white-space: nowrap;
 }
 frequency::before {
   content: "Frequency ";
