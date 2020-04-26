@@ -239,15 +239,15 @@ dc::before {
 
 /* Spells */
 
-spell,
+spells,
 cantrips {
   font-style: italic;
 }
-spell::before,
+spells::before,
 cantrips::before {
   font-style: normal;
 }
-spell[level]::before {
+spells[level]::before {
   content: attr(level) " ";
 }
 cantrips[level]::before {
