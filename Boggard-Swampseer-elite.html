@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boggard Swampseer (Elite)</title>
+    <link rel="stylesheet" href="CSS/creatures.css" />
+    <script src="js/creatures.js"></script>
+  </head>
+  <body>
+    <creature>
+      <name>
+        Boggard Swampseer (Elite)
+      </name>
+      <level>4</level>
+      <stats>
+        <traits>
+          <alignment>CE</alignment>
+          <size>medium</size>
+          <trait>amphibious</trait>
+          <trait>Boggard</trait>
+          <trait>HUMANOID</trait>
+        </traits>
+        <perception>+13; darkvision</perception>
+        <languages>Abyssal, Boggard, Draconic, Mwangi</languages>
+        <skills>
+          <skill>
+            Athletics +10,
+          </skill>
+          <skill>
+            Intimidation +10,
+          </skill>
+          <skill>
+            Medicine +11,
+          </skill>
+          <skill>
+            Nature +13,
+          </skill>
+          <skill>
+            Performance +10
+          </skill>
+          <skill>
+            Religion +11,
+          </skill>
+        </skills>
+        <str>+3</str>
+        <dex>+0</dex>
+        <con>+2</con>
+        <int>+0</int>
+        <wis>+4</wis>
+        <cha>+3</cha>
+        <items>staff</items>
+      </stats>
+      <stats>
+        <div><AC>20</AC> <Fort>+11</Fort> <Ref>+9</Ref><Will>+13</Will></div>
+        <HP>55</HP>
+      </stats>
+      <stats>
+        <speed>20 feet, swim 25 feet; swamp stride</speed>
+        <melee>
+          <a1></a1> staff +12 (two-hand d8), <Damage> 1d4+8 bludgeoning</Damage>
+        </melee>
+        <Melee>
+          <a1></a1>Tongue +12 (reach 10 feet),
+          <Effect> Tongue Grab</Effect>
+        </Melee>
+        <rule name="Divine Prepared Spells">
+          <dc>23</dc>, attack +13;
+          <spells level="2nd">
+            <spell spellid="2">
+              acid arrow
+            </spell>
+            <spell spellid="210">
+              obscuring mist
+            </spell>
+          </spells>
+          <spells level="1st">
+            <spell spellid="110">fear</spell>
+            <spell spellid="167">jump</spell>
+            <spell spellid="282">shillelagh</spell>
+          </spells>
+          <cantrips level="2nd">
+            <spell spellid="3">
+              acid splash
+            </spell>
+            <spell spellid="58">
+              dancing lights
+            </spell>
+            <spell spellid="245">
+              ray of frost
+            </spell>
+            <spell spellid="330">
+              tanglefoot
+            </spell>
+          </cantrips>
+        </rule>
+        <rule name="Destructive Croak">
+          <a2></a2> (sonic) The swampseer utters a powerful croak that deals 5d6
+          sonic damage to any non-boggard within a 15-foot emanation (DC 21
+          basic Fortitude save); any creature with the frightened condition
+          takes additional sonic damage equal to twice the value of their
+          frightened condition. The boggard can’t use Destructive Croak again
+          for 1d4 rounds
+        </rule>
+        <rule name="Drowning Drone">
+          <r0></r0>
+          (auditory, mental) Trigger The boggard swampseer or one of its allies
+          within 60 feet attempts a saving throw against an auditory or sonic
+          effect.
+          <effect>
+            The swampseer releases a croak that drowns out other sound. It rolls
+            a Performance check. It and boggard allies in the area can use the
+            higher result of the swampseer’s Performance check or their saves to
+            resolve the effects against the auditory or sonic effect.
+          </effect>
+        </rule>
+        <rule name="Swamp Stride">
+          A boggard warrior ignores difficult terrain caused by swamp terrain
+          features.
+        </rule>
+        <rule name="Terrifying Croak">
+          <a1></a1> (auditory, emotion, fear, mental) The boggard warrior
+          unleashes a terrifying croak. Any non-boggard within 30 feet becomes
+          frightened 1 unless they succeed at a DC 21 Will save; those who
+          critically succeed are temporarily immune for 1 minute.
+        </rule>
+        <rule name="Tongue Grab">
+          If the boggard warrior hits a creature with its tongue, that creature
+          becomes grabbed by the boggard. Unlike with a normal grab, the
+          creature isn’t immobilized, but it can’t move beyond the reach of the
+          boggard’s tongue. A creature can sever the tongue by hitting AC 17 and
+          dealing at least 4 slashing damage. Though this doesn’t deal any
+          damage to the boggard, it prevents it from using its tongue Strike
+          until it regrows its tongue, which takes a week.
+        </rule>
+      </stats>
+    </creature>
+  </body>
+</html>
