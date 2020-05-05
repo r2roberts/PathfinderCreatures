@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Red Dragon Pillar (Elite)</title>
+    <link rel="stylesheet" href="CSS/creatures.css" />
+    <script src="js/creatures.js"></script>
+  </head>
+  <body>
+    <hazard>
+      <name>
+        Red Dragon Pillar (Elite)
+      </name>
+      <level>7</level>
+      <stats>
+        <traits>
+          <rare>rare</rare>
+          <trait>complex</trait>
+          <trait>magical</trait>
+          <trait>trap</trait>
+        </traits>
+        <rule name="Stealth">+0 or detect magic</rule>
+        <perception> +18; darkvision 60 feet </perception>
+        <rule name="Recognize Ally">
+          A dragon pillar can see through its empty eye sockets, and it can
+          recognize Cinderclaws and their allies. A character disguised as a
+          Cinderclaw can trick a dragon pillar into perceiving it as a
+          Cinderclaw ally by using Deception to Impersonate. A dragon pillar
+          always uses Perception for initiative.
+          <br /><description>
+            A 10-foot-tall wooden pole topped by a wooden carving of Dahak’s
+            head. Each dragon pillar’s head has been treated with something to
+            give it a distinct color, as indicated in the specific encounter,
+            but regardless of color, plumes of smoke waft up from the mouth.
+          </description>
+        </rule>
+      </stats>
+      <stats>
+        <rule name="Disable">
+          Athletics <DC>28</DC> (expert) to push the pillar over, or Thievery
+          <DC>28</DC> (expert) on the pillar to erase the magic runes that power
+          it, or dispel magic (4th level; counteract <DC>24</DC>) to dispel the
+          pillar’s magic.
+        </rule>
+        <div>
+          <AC>26</AC>
+          <Fort>+19</Fort>
+          <Ref>+10</Ref>
+        </div>
+        <rule name="Hardness">
+          16,
+          <HP>76 (BT 38)</HP>
+          <immunities>
+            critical hits, fire, object immunities, precision damage
+          </immunities>
+        </rule>
+      </stats>
+      <stats>
+        <rule name="Routine">
+          (1 action) On its initiative, the dragon pillar fires an eye beam at
+          the closest target within 120 feet.
+        </rule>
+        <ranged>
+          <a1></a1> (1 action) On its initiative, the dragon pillar fires an eye
+          beam at the closest target within 120 feet.
+          <effect>
+            The target is subjected to an effect determined by the pillar’s
+            color and summarized below. On a critical hit, the target’s save
+            result is one degree worse.
+          </effect>
+        </ranged>
+
+        <rule name="Red Eye Beam (area A16)">
+          (fire) 7d6 fire damage (DC 26 basic Reflex save).
+        </rule>
+      </stats>
+    </hazard>
+  </body>
+</html>

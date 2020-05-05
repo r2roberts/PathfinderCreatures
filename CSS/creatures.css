@@ -83,6 +83,7 @@ traits {
   font-family: "Roboto Condensed", sans-serif;
 }
 trait,
+rare,
 uncommon,
 unique,
 alignment,
@@ -105,6 +106,9 @@ size {
 }
 trait {
   background-color: #58180d;
+}
+rare {
+  background-color: #0c1466;
 }
 uncommon {
   background-color: #98513d;
@@ -237,6 +241,12 @@ ranged::before {
 }
 damage::before {
   content: "Damage ";
+}
+description::before {
+  content: "Description ";
+}
+dc {
+  white-space: nowrap;
 }
 dc::before {
   content: "DC ";
