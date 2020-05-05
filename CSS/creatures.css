@@ -125,6 +125,8 @@ size {
 
 /* hanging indent */
 perception,
+description,
+disable,
 languages,
 skills,
 items,
@@ -244,6 +246,9 @@ damage::before {
 }
 description::before {
   content: "Description ";
+}
+disable::before {
+  content: "Disable ";
 }
 dc {
   white-space: nowrap;
