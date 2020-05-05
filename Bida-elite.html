@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bida (Elite)</title>
+    <link rel="stylesheet" href="CSS/creatures.css" />
+    <script src="js/creatures.js"></script>
+  </head>
+  <body>
+    Recall Knowledge - Dragon (Arcana): DC 28
+    <creature>
+      <name>
+        Bida (Elite)
+      </name>
+      <level>9</level>
+      <stats>
+        <traits>
+          <uncommon>Uncommon</uncommon>
+          <alignment>LE</alignment>
+          <size>Huge</size>
+          <trait>Dragon</trait>
+        </traits>
+        <perception> +17; darkvision, scent (imprecise) 30 feet </perception>
+        <languages>
+          Common, Draconic, Mwangi
+        </languages>
+        <skills>
+          <skill>
+            Deception +22
+          </skill>
+          <skill>
+            Diplomacy +20
+          </skill>
+          <skill>
+            Intimidation +20
+          </skill>
+          <skill>
+            Society +18
+          </skill>
+          <skill>
+            Stealth +18
+          </skill>
+        </skills>
+        <Str>+6</Str>
+        <Dex>+2</Dex>
+        <Con>+3</Con>
+        <Int>+4</Int>
+        <Wis>+3</Wis>
+        <Cha>+6</Cha>
+      </stats>
+      <stats>
+        <div>
+          <AC>29</AC>
+          <Fort>+20</Fort>
+          <Ref>+17</Ref>
+          <Will>+20</Will>; +2 circumstance to all saves to disbelieve illusions
+        </div>
+        <rule>
+          <HP>155</HP>
+          <immunities> paralyzed, sleep;</immunities>
+          <resistances>
+            acid 10, poison 10
+          </resistances>
+        </rule>
+      </stats>
+      <stats>
+        <speed>
+          40 feet, climb 20 feet, fly 60 feet
+        </speed>
+        <melee>
+          <a1></a1> jaws +22 (reach 15 feet),
+          <damage>
+            2d12+11 piercing
+          </damage>
+        </melee>
+        <melee>
+          <a1></a1> tail +22 (reach 15 feet),
+          <damage>
+            2d6+11 bludgeoning plus
+            <a href="http://2e.aonprd.com/MonsterAbilities.aspx?ID=27"
+              >Improved Grab</a
+            >
+          </damage>
+        </melee>
+        <rule name="Occult Innate Spells">
+          <DC>28</DC>;
+          <spells level="3rd">
+            <spell spellId="104">enthrall</spell>
+            <spell spellId="209">nondetection</spell>
+          </spells>
+          <spells level="2nd">
+            <spell spellId="153">
+              humanoid form
+            </spell>
+          </spells>
+        </rule>
+        <rule name="Constrict"> <a1></a1> 1d6+8 bludgeoning, DC 28 </rule>
+        <rule name="Eight Coils">
+          A bida can Strike with its tail even while Grabbing creatures with it.
+          The bida can have up to eight Medium or smaller creatures grabbed with
+          its tail at a time; it can also grab Large creatures, but they count
+          as four Medium creatures for this purpose.
+        </rule>
+        <rule name="Mask Settlement">
+          (arcane, illusion) By concentrating for 4 hours, the bida hides a
+          small settlement. This is a 5th-level hallucinatory terrain spell,
+          except the area is a 500-foot burst and creatures are invisible while
+          inside structures in the area. The bida can conceal only one
+          settlement at a time, and must concentrate on the effect for 10
+          minutes at the beginning of each day to maintain the illusion.
+        </rule>
+      </stats>
+    </creature>
+  </body>
+</html>
