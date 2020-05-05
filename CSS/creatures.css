@@ -127,6 +127,7 @@ size {
 perception,
 description,
 disable,
+routine,
 languages,
 skills,
 items,
@@ -249,6 +250,9 @@ description::before {
 }
 disable::before {
   content: "Disable ";
+}
+routine::before {
+  content: "Routine ";
 }
 dc {
   white-space: nowrap;
