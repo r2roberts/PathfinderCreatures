@@ -23,11 +23,16 @@ function addSpellLinksTo(spellsElems) {
         a.textContent = spellElem.textContent;
         spellElem.textContent = null;
         spellElem.appendChild(a);
-
         if (i == spellElems.length - 1) {
           a.textContent += ";";
         } else {
           a.textContent += ",";
+        }
+      } else {
+        if (i == spellElems.length - 1) {
+          spellElem.textContent += ";";
+        } else {
+          spellElem.textContent += ",";
         }
       }
     }
