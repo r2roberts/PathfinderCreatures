@@ -30,12 +30,14 @@ a3 {
   height: 1em;
   padding: 0px 0.1em 0px 0.2em;
 }
-creature {
+creature,
+hazard {
   display: block;
   width: 35em;
   margin: 20px 0px 100px 50px;
 }
-creature hr {
+creature hr,
+hazard hr {
   border-color: black;
   border-width: 0.5px;
 }
@@ -43,7 +45,8 @@ magic {
   font-style: italic;
   color: goldenrod;
 }
-creature name {
+creature name,
+hazard name {
   display: inline;
   font-size: 1.17em;
   margin-left: 0;
@@ -63,8 +66,11 @@ level {
   text-transform: uppercase;
   border: 0px;
 }
-level::before {
+creature level::before {
   content: "Creature ";
+}
+hazard level::before {
+  content: "Hazard ";
 }
 stats {
   display: block;
