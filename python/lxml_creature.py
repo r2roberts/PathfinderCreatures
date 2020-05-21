@@ -22,8 +22,24 @@ def add_creature(body, c):
     level.text = str(c._lvl)
     stats = SE(creature, "stats")
     traits = SE(stats, "traits")
-    print("c._traits", c._traits)
     list(map(lambda x: add_trait(traits, x), c._traits))
+    perception = SE(stats, "perception")
+    perception.text = c._perception
+    languages = SE(stats, "languages")
+    languages.text = c._languages
+    skills = SE(stats, "skills")
+    add_skills(skills, c._skills)
+
+
+def add_skills(elem, skills):
+    comma_skills = [x + "," for x in skills]
+    comma_skills[-1] = skills[-1]
+
+    def add_skill(x):
+        sk = SE(elem, "skill")
+        sk.text = x
+
+    list(map(add_skill, comma_skills))
 
 
 def add_trait(traits, trait):
