@@ -53,15 +53,10 @@ class SpellGroup(object):
         return spells
 
 
-class Creature(object):
+class NPC(object):
     def __init__(self, name: str, lvl: int = 0) -> None:
         self._name = name
         self._lvl = lvl
-
-        self._languages = None
-        self._skills = None
-        self._items = []
-        self._interaction_abilities = []
 
         self._ac = None
         self._saves = None
@@ -70,18 +65,89 @@ class Creature(object):
         self._immunities = None
         self._weaknesses = None
         self._resistances = None
-
-        self._automatic_abilities = []
-        self._reactive_abilities = []
-
         self._melees = []
         self._ranged = []
-        self._spell_groups = []
-
+        self._reactive_abilities = []
         self._offensive_abilities = []
 
     def traits(self, *traits) -> None:
         self._traits = list(traits)
+
+    def saves(self, *saves):
+        self._saves = saves
+
+    def ac(self, ac: str):
+        self._ac = ac
+
+    def immunities(self, immunities: str):
+        self._immunities = immunities
+
+    def weaknesses(self, weaknesses: str):
+        self._weaknesses = weaknesses
+
+    def resistances(self, resistances: str):
+        self._resistances = resistances
+
+    def reactive_ability(self, name: str, action: Actions = None, desc: str = None, trigger: str = None, effect: str = None,
+                         frequency: str = None):
+        self._reactive_abilities.append({"name": name, "action": action, "trigger": trigger, "effect": effect,
+                                         "desc": desc, "frequency": frequency})
+
+    def melee(self, desc: str, action: Actions = None, damage: str = None):
+        self._melees.append({"desc": desc, "action": action, "damage": damage})
+
+    def ranged(self, desc: str, action: Actions = None, damage: str = None):
+        self._ranged.append({"desc": desc, "action": action, "damage": damage})
+
+    def offensive_ability(self, name: str, action: Actions = None, trigger: str = None, effect: str = None,
+                          desc: str = None, frequency: str = None):
+        self._offensive_abilities.append({"name": name, "action": action, "trigger": trigger, "effect": effect,
+                                          "desc": desc, "frequency": frequency})
+
+
+class Hazard(NPC):
+    def __init__(self, name: str, lvl: int = 0) -> None:
+        super().__init__(name, lvl)
+        self._stealth = None
+        self._routine = None
+        self._description = None
+        self._disable = None
+        self._hardness = None
+        self._reset = None
+
+    def stealth(self, stealth: str):
+        self._stealth = stealth
+
+    def description(self, desc: str):
+        self._description = desc
+
+    def disable(self, disable: str):
+        self._disable = disable
+
+    def hardness(self, hardness: str, hp: str, bt: str, part=None):
+        self._hardness = {"hardness": hardness,
+                          "part": part, "hp": hp, "bt": bt}
+
+    def routine(self, desc: str):
+        self._routine = desc
+
+    def reset(self, reset: str):
+        self._reset = reset
+
+
+class Creature(NPC):
+    def __init__(self, name: str, lvl: int = 0) -> None:
+        super().__init__(name, lvl)
+
+        self._languages = None
+        self._skills = None
+        self._hp = None
+        self._items = []
+        self._interaction_abilities = []
+
+        self._automatic_abilities = []
+
+        self._spell_groups = []
 
     def perception(self, perception: str):
         self._perception = perception
@@ -95,31 +161,11 @@ class Creature(object):
     def attrs(self, *attrs):
         self._attrs = attrs
 
-    def ac(self, ac: str):
-        self._ac = ac
-
-    def saves(self, *saves):
-        self._saves = saves
-
-    def hp(self, hp: str):
-        self._hp = hp
-
-    def immunities(self, immunities: str):
-        self._immunities = immunities
-
-    def weaknesses(self, weaknesses: str):
-        self._weaknesses = weaknesses
-
-    def resistances(self, resistances: str):
-        self._resistances = resistances
-
     def item(self, item: str, magic: bool = False):
         self._items.append((item, magic))
 
-    def reactive_ability(self, name: str, action: Actions = None, desc: str = None, trigger: str = None, effect: str = None,
-                         frequency: str = None):
-        self._reactive_abilities.append({"name": name, "action": action, "trigger": trigger, "effect": effect,
-                                         "desc": desc, "frequency": frequency})
+    def hp(self, hp: str):
+        self._hp = hp
 
     def interaction_ability(self, name: str, action: Actions = None, desc: str = None, trigger: str = None,
                             effect: str = None, frequency: str = None):
@@ -128,17 +174,6 @@ class Creature(object):
 
     def speed(self, speed: str):
         self._speed = speed
-
-    def melee(self, desc: str, action: Actions = None, damage: str = None):
-        self._melees.append({"desc": desc, "action": action, "damage": damage})
-
-    def ranged(self, desc: str, action: Actions = None, damage: str = None):
-        self._ranged.append({"desc": desc, "action": action, "damage": damage})
-
-    def offensive_ability(self, name: str, action: Actions = None, trigger: str = None, effect: str = None,
-                          desc: str = None, frequency: str = None):
-        self._offensive_abilities.append({"name": name, "action": action, "trigger": trigger, "effect": effect,
-                                          "desc": desc, "frequency": frequency})
 
     def spell_group(self, name: str, desc=None, dc=None) -> SpellGroup:
         sg = SpellGroup(name, dc, desc)

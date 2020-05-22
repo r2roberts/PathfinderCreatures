@@ -10,14 +10,97 @@ actions = {Actions.REACTION: "r0", Actions.FREE: "a0",
            Actions.ONE: "a1", Actions.TWO: "a2", Actions.THREE: "a3"}
 
 
-def to_html(creature: creature.Creature) -> str:
+def to_html(c: creature.NPC) -> str:
     docstr = "<!doctype html>"
     html = E("html", lang="en")
-    add_head(html, creature)
+    add_head(html, c)
     body = SE(html, "body")
-    add_creature(body, creature)
+    if isinstance(c, creature.Creature):
+        add_creature(body, c)
+    elif isinstance(c, creature.Hazard):
+        add_hazard(body, c)
 
     return docstr + "\n" + etree.tostring(html, pretty_print=True).decode("utf-8")
+
+
+def add_hazard(body, h):
+    hazard = SE(body, "hazard")
+    name = SE(hazard, "name")
+    name.text = h._name
+    level = SE(hazard, "level")
+    level.text = str(h._lvl)
+    stats = SE(hazard, "stats")
+    traits = SE(stats, "traits")
+    list(map(lambda x: add_trait(traits, x), h._traits))
+
+    add_stealth(stats, h._stealth)
+    add_description(stats, h._description)
+
+    stats = SE(hazard, "stats")
+    add_ac_saves(stats, h._ac, h._saves)
+    add_hardness(stats, h._hardness, h._immunities,
+                 h._weaknesses, h._resistances)
+    add_abilities(stats, h._reactive_abilities)
+
+    stats = SE(hazard, "stats")
+    add_routine(stats, h._routine)
+
+    add_melee(stats, h._melees)
+    add_ranged(stats, h._ranged)
+
+    add_abilities(stats, h._offensive_abilities)
+
+    stats = SE(hazard, "stats")
+    add_reset(stats, h._reset)
+
+
+def add_reset(elem, reset):
+    rule = SE(elem, "rule", name="Reset")
+    rule.text = reset
+
+
+def add_actions(elem, actions):
+    for a in actions:
+        a_e = SE(elem, "rule", name=a["name"])
+
+
+def add_routine(elem, routine):
+    rule = SE(elem, "rule", name="Routine")
+    rule.text = routine
+
+
+def add_hardness(elem, hardness, immunities, weaknesses, resistances):
+
+    h = hardness
+    name = h.get("part") + " " if h.get("part") else ""
+    name += "Hardness"
+    rule = SE(elem, "rule", name=name)
+    rule.text = h["hardness"]
+    sp = SE(rule, "span")
+    sp.text = "; "
+    hp_el = SE(rule, "HP")
+    hp_el.text = h["hp"] + f" (BT {h['bt']})" if h.get("bt") else ""
+    sp = SE(rule, "span")
+    sp.text = " "
+    if immunities is not None:
+        i_e = SE(rule, "immunities")
+        i_e.text = immunities
+    if weaknesses is not None:
+        w_e = SE(rule, "weaknesses")
+        w_e.text = weaknesses
+    if resistances is not None:
+        r_e = SE(rule, "resistances")
+        r_e.text = resistances
+
+
+def add_stealth(elem, stealth):
+    rule = SE(elem, "rule", name="Stealth")
+    rule.text = stealth
+
+
+def add_description(elem, description):
+    rule = SE(elem, "rule", name="Description")
+    rule.text = description
 
 
 def add_creature(body, c):

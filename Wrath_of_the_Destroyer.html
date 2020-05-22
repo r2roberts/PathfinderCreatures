@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Wrath of the Destroyer</title>
+    <link rel="stylesheet" href="CSS/creatures.css"/>
+    <script src="js/creatures.js"></script>
+  </head>
+  <body>
+    <hazard>
+      <name>Wrath of the Destroyer</name>
+      <level>10</level>
+      <stats>
+        <traits>
+          <trait>COMPLEX</trait>
+          <trait>MAGICAL</trait>
+          <trait>TRAP</trait>
+        </traits>
+        <rule name="Stealth">+22 (expert) to notice subtle vapors of magical energy seething across the doors</rule>
+        <rule name="Description">These heavy doors, carved with an image of Dahak, echo with a hatred so powerful that it can kill anyone who comes nearby, manifesting a vision of Dahak&#8217;s head emerging from the doors to strike at a foe.</rule>
+      </stats>
+      <stats>
+        <div>
+          <ac>30</ac>
+          <Fort>+22</Fort>
+          <Ref>+14</Ref>
+        </div>
+        <rule name="Door Hardness">18<span>; </span><HP>72 (BT 36)</HP><span> </span><immunities>critical hits, fire, object immunities, precision damage</immunities></rule>
+        <rule name="Expunge">
+          <r0></r0>
+          <trigger>A non-worshipper of Dahak touches either door leading to C7;</trigger>
+          <effect>The hazard targets the creature with Face of the Fatal Divine, then rolls initiative.</effect>
+        </rule>
+      </stats>
+      <stats>
+        <rule name="Routine">(1 action) On its initiative, the wrath of the destroyer targets the closest target in area C6 with Face of the Fatal Divine.</rule>
+        <rule name="Face of the Fatal Divine">
+          <a1></a1>
+          <span>(death, divine, emotion, fear, illusion, mental) The creature beholds the face of Dahak as it emerges to bite with its burning jaws, targeting the creature with phantasmal killer(5th level, Will DC 29).</span>
+        </rule>
+      </stats>
+      <stats>
+        <rule name="Reset">The trap deactivates and resets if 1 minute passes without any creature being in range.</rule>
+      </stats>
+    </hazard>
+  </body>
+</html>
