@@ -1,3 +1,4 @@
 Dockerfile
 index.html
-.vscode/settings.json
+nginx.conf
+.vscode/
