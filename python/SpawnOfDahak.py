@@ -14,8 +14,8 @@ c.ac("27")
 c.saves("Fort +19", "Ref +13", "Will +16")
 c.hp("135")
 c.immunities("fire, paralyzed, sleep")
-c.reactive_ability("Tail Swipe", action=Actions.REACTION, desc="A test description", trigger="A creature within reach of Racharak’s tail uses a move action or leaves a square during a move action it’s using.",
-                   effect="Racharak makes a tail Strike at the creature with a –2 penalty. If it hits, she disrupts the creature’s action.")
+c.reactive_ability("Tail Swipe", action=Actions.REACTION, trigger="A creature within reach of Racharak’s tail uses a move action or leaves a square during a move action it’s using.",
+                   effect="Racharak makes a tail Strike at the creature with a –2 penalty. If it hits, it disrupts the creature’s action.")
 c.speed("30 feet, climb 30 feet")
 c.melee("warhammer +21 (shove)", action=Actions.ONE,
         damage="2d8+9 bludgeoning (plus 1d5 fire if red-hot)")
@@ -26,7 +26,7 @@ c.melee("tail + 20 (reach 10 feet)",
 c.ranged("thrown rock + 17 (deadly 1d6, thrown 20 feet)",
          action=Actions.ONE, damage="2d6+9 bludgeoning")
 c.offensive_ability("Breath Weapon", action=Actions.TWO,
-                    desc="Racharak breathes flames that deals 9d6 fire damage to all creatures in a 30-foot cone(DC 26 basic Reflex save). She can’t use Breath Weapon again for 1d4 rounds.")
+                    desc="Racharak breathes flames that deals 9d6 fire damage to all creatures in a 30-foot cone(DC 26 basic Reflex save). It can’t use Breath Weapon again for 1d4 rounds.")
 c.offensive_ability("Draconic Frenzy", action=Actions.TWO,
                     desc="Racharak makes two claw Strikes and one bite Strike in any order.")
 c.offensive_ability("Shrieking Frenzy", action=Actions.FREE,
