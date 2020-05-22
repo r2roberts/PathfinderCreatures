@@ -33,6 +33,10 @@ def add_hazard(body, h):
     traits = SE(stats, "traits")
     list(map(lambda x: add_trait(traits, x), h._traits))
 
+    if h._perception is not None:
+        perception = SE(stats, "perception")
+        perception.text = h._perception
+
     add_stealth(stats, h._stealth)
     add_description(stats, h._description)
 
@@ -42,16 +46,18 @@ def add_hazard(body, h):
                  h._weaknesses, h._resistances)
     add_abilities(stats, h._reactive_abilities)
 
-    stats = SE(hazard, "stats")
-    add_routine(stats, h._routine)
+    if h._routine is not None:
+        stats = SE(hazard, "stats")
+        add_routine(stats, h._routine)
 
     add_melee(stats, h._melees)
     add_ranged(stats, h._ranged)
 
     add_abilities(stats, h._offensive_abilities)
 
-    stats = SE(hazard, "stats")
-    add_reset(stats, h._reset)
+    if h._reset is not None:
+        stats = SE(hazard, "stats")
+        add_reset(stats, h._reset)
 
 
 def add_reset(elem, reset):

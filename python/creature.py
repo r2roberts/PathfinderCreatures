@@ -58,6 +58,7 @@ class NPC(object):
         self._name = name
         self._lvl = lvl
 
+        self._perception = None
         self._ac = None
         self._saves = None
 
@@ -72,6 +73,9 @@ class NPC(object):
 
     def traits(self, *traits) -> None:
         self._traits = list(traits)
+
+    def perception(self, perception: str):
+        self._perception = perception
 
     def saves(self, *saves):
         self._saves = saves
@@ -148,9 +152,6 @@ class Creature(NPC):
         self._automatic_abilities = []
 
         self._spell_groups = []
-
-    def perception(self, perception: str):
-        self._perception = perception
 
     def languages(self, languages: str):
         self._languages = languages

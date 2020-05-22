@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dahak&#8217;s Skull</title>
+    <link rel="stylesheet" href="CSS/creatures.css"/>
+    <script src="js/creatures.js"></script>
+  </head>
+  <body>
+    <hazard>
+      <name>Dahak&#8217;s Skull</name>
+      <level>6</level>
+      <stats>
+        <traits>
+          <unique>UNIQUE</unique>
+          <trait>COMPLEX</trait>
+          <trait>FIRE</trait>
+          <trait>MAGICAL</trait>
+          <trait>TRAP</trait>
+        </traits>
+        <perception>+16 darkvision, see invisibility</perception>
+        <rule name="Stealth">+0, but DC 24 to notice that the fiery lights within the skull&#8217;s eye sockets seem to be looking around the room.</rule>
+        <rule name="Description">A pair of magical gems inside the dragon skull&#8217;s eye sockets act as magical sensors with a 30-foot radius.</rule>
+      </stats>
+      <stats>
+        <div>
+          <ac>24</ac>
+          <Fort>+17</Fort>
+          <Ref>+8</Ref>
+        </div>
+        <rule name="Hardness">14<span>; </span><HP>56 (BT 28)</HP><span> </span><immunities>critical hits, fire, object immunities, precision damage</immunities></rule>
+        <rule name="Dahak&#8217;s Glance">
+          <r0></r0>
+          <span>(divine, evocation, fire)</span>
+          <trigger>A living creature that is not a member of the Cinderclaws enters area C9</trigger>
+          <effect>One of the dragon skull&#8217;s eye sockets shoots an eye beam at the triggering creature, then the hazard rolls initiative.</effect>
+        </rule>
+      </stats>
+      <stats>
+        <rule name="Routine">(2 actions) On its initiative, Dahak&#8217;s skull fires up to two eye beams; it must target a different creature with each attack. The eye beams can&#8217;t target creatures directly below the skull.</rule>
+        <ranged>
+          <span>eye beam + 20 (divine, evocation, fire, range 150 feet), </span>
+          <damage>8d6 fire</damage>
+        </ranged>
+      </stats>
+    </hazard>
+  </body>
+</html>
