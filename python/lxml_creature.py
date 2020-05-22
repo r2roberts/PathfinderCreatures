@@ -38,11 +38,14 @@ def add_creature(body, c):
     add_skills(skills, c._skills)
     add_attributes(stats, c._attrs)
     add_items(stats, c._items)
+    add_abilities(stats, c._interaction_abilities)
 
     stats = SE(creature, "stats")
     add_ac_saves(stats, c._ac, c._saves)
-    add_hp_immunities(stats, c._hp, c._immunities)
-    add_abilities(stats, c._interaction_abilities)
+    add_hp_immunities(stats, c._hp, c._immunities,
+                      c._weaknesses, c._resistances)
+    add_abilities(stats, c._automatic_abilities)
+    add_abilities(stats, c._reactive_abilities)
 
     stats = SE(creature, "stats")
     speed = SE(stats, "speed")
@@ -50,13 +53,28 @@ def add_creature(body, c):
     add_melee(stats, c._melees)
     add_ranged(stats, c._ranged)
 
-    add_spells(stats)
+    add_spell_groups(stats, c._spell_groups)
 
     add_abilities(stats, c._offensive_abilities)
 
 
-def add_spells(elem):
-    pass
+def add_spell_groups(elem, spell_groups):
+    def add_spells(elem, spells):
+        for sp in spells._spells:
+            sp_e = SE(sps_e, "spell")
+            sp_e.text = sp._name
+            sp_e.tail = " "
+            if sp._id is not None:
+                sp_e.set("spellId", sp._id)
+
+    for sg in spell_groups:
+        rule = SE(elem, "rule", name=sg._name)
+        dc_e = SE(rule, "dc")
+        dc_e.text = str(sg._dc)
+        dc_e.tail = ", " + sg._desc + "; "
+        for sps in sg._spells:
+            sps_e = SE(rule, "spells", level=sps._lvl)
+            add_spells(sps_e, sps)
 
 
 def add_ranged(elem, ranged):
@@ -111,12 +129,19 @@ def add_abilities(elem, abililties):
                 tail.tail = a["desc"]
 
 
-def add_hp_immunities(elem, hp, immunities):
+def add_hp_immunities(elem, hp, immunities, weaknesses, resistances):
     rule = SE(elem, "rule")
     hp_e = SE(rule, "hp")
     hp_e.text = hp
-    i_e = SE(rule, "immunities")
-    i_e.text = immunities
+    if immunities is not None:
+        i_e = SE(rule, "immunities")
+        i_e.text = immunities
+    if weaknesses is not None:
+        w_e = SE(rule, "weaknesses")
+        w_e.text = weaknesses
+    if resistances is not None:
+        r_e = SE(rule, "resistances")
+        r_e.text = resistances
 
 
 def add_ac_saves(elem, ac, saves):
