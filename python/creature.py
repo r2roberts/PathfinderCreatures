@@ -17,6 +17,8 @@ class Creature(object):
         self._offensive_abilities = []
         self._melees = []
         self._ranged = []
+        self._languages = None
+        self._items = None
 
     def traits(self, *traits) -> None:
         self._traits = list(traits)
@@ -62,7 +64,7 @@ class Creature(object):
     def offensive_ability(self, name: str, action: Actions = None, trigger: str = None, effect: str = None,
                           desc: str = None, frequency: str = None):
         self._offensive_abilities.append({"name": name, "action": action, "trigger": trigger, "effect": effect,
-                                          "frequency": frequency})
+                                          "desc": desc, "frequency": frequency})
 
     def __str__(self) -> str:
         return "str creature " + self._name
