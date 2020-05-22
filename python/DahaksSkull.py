@@ -18,5 +18,5 @@ c.reactive_ability("Dahak’s Glance", action=Actions.REACTION, desc="(divine, e
                    effect="One of the dragon skull’s eye sockets shoots an eye beam at the triggering creature, then the hazard rolls initiative.")
 
 c.routine("(2 actions) On its initiative, Dahak’s skull fires up to two eye beams; it must target a different creature with each attack. The eye beams can’t target creatures directly below the skull.")
-c.ranged("eye beam + 20 (divine, evocation, fire, range 150 feet)",
+c.ranged("eye beam + 20 (divine, evocation, fire, range 150 feet)", action=Actions.ONE,
          damage="8d6 fire")
