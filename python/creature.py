@@ -104,6 +104,12 @@ class Creature(object):
     def immunities(self, immunities: str):
         self._immunities = immunities
 
+    def weaknesses(self, weaknesses: str):
+        self._weaknesses = weaknesses
+
+    def resistances(self, resistances: str):
+        self._resistances = resistances
+
     def items(self, items: str):
         self._items = items
 
