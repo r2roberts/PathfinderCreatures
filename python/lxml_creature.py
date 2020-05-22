@@ -93,9 +93,8 @@ def add_attack(tag, elem, attacks):
         if a.get("action") is not None:
             ac_e = SE(a_e, actions[a["action"]])
             ac_e.text = ""
-            ac_e.tail = a["desc"] + delim
-        else:
-            a_e.text = a["desc"] + delim
+        s_e = SE(a_e, "span")
+        s_e.text = a["desc"] + delim
         if a.get("damage") is not None:
             d_e = SE(a_e, "damage")
             d_e.text = a["damage"]
@@ -105,28 +104,21 @@ def add_abilities(elem, abililties):
 
     for a in abililties:
         rule = SE(elem, "rule", name=a["name"])
-        tail = None
         if a.get("action") is not None:
             a_i = SE(rule, actions[a["action"]])
             a_i.text = ""
-            tail = a_i
+        if a.get("desc") is not None:
+            sp = SE(rule, "span")
+            sp.text = a["desc"]
         if a.get("trigger") is not None:
             trigger = SE(rule, "trigger")
             trigger.text = a["trigger"]
-            tail = trigger
         if a.get("frequency") is not None:
             freq = SE(rule, "frequency")
             freq.text = a["frequency"] + "; "
-            tail = freq
         if a.get("effect") is not None:
             ef = SE(rule, "effect")
             ef.text = a["effect"]
-            tail = ef
-        if a.get("desc") is not None:
-            if tail is None:
-                rule.text = a["desc"]
-            else:
-                tail.tail = a["desc"]
 
 
 def add_hp_immunities(elem, hp, immunities, weaknesses, resistances):
@@ -155,9 +147,16 @@ def add_ac_saves(elem, ac, saves):
 
 
 def add_items(elem, items):
-    if items is not None:
+    if len(items) != 0:
         e = SE(elem, "items")
-        e.text = items
+        item_str = ""
+        for item in items:
+            if item[1]:
+                m_e = SE(e, "magic")
+                m_e.text = item[0]
+            else:
+                m_e = SE(e, "span")
+                m_e.text = item[0]
 
 
 def add_attributes(elem, attrs):

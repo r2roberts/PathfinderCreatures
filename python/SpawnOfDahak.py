@@ -5,7 +5,8 @@ c = creature.Creature("Spawn of Dahak", lvl=8)
 c.traits("Rare", "CE", "SMALL", "CHARAU-KA", "DRAGON", "FIRE", "HUMANOID")
 c.perception("+16; darkvision, scent(imprecise) 30 feet")
 c.languages("Draconic, Mwangi")
-c.items("+1 striking warhammer")
+c.item("+1 striking warhammer", True)
+
 c.skills("Arcana +12", "Athletics +18", "Crafting +10",
          "Intimidation +17", "Religion +14", "Stealth +15", "Survival +14")
 c.attrs("Str +6", "Dex +3", "Con +5", "Int +0", "Wis +4", "Cha +1")
@@ -13,7 +14,7 @@ c.ac("27")
 c.saves("Fort +19", "Ref +13", "Will +16")
 c.hp("135")
 c.immunities("fire, paralyzed, sleep")
-c.reactive_ability("Tail Swipe", action=Actions.REACTION, trigger="A creature within reach of Racharak’s tail uses a move action or leaves a square during a move action it’s using.",
+c.reactive_ability("Tail Swipe", action=Actions.REACTION, desc="A test description", trigger="A creature within reach of Racharak’s tail uses a move action or leaves a square during a move action it’s using.",
                    effect="Racharak makes a tail Strike at the creature with a –2 penalty. If it hits, she disrupts the creature’s action.")
 c.speed("30 feet, climb 30 feet")
 c.melee("warhammer +21 (shove)", action=Actions.ONE,

@@ -57,7 +57,7 @@ class Creature(object):
 
         self._languages = None
         self._skills = None
-        self._items = None
+        self._items = []
         self._interaction_abilities = []
 
         self._ac = None
@@ -110,18 +110,18 @@ class Creature(object):
     def resistances(self, resistances: str):
         self._resistances = resistances
 
-    def items(self, items: str):
-        self._items = items
+    def item(self, item: str, magic: bool = False):
+        self._items.append((item, magic))
 
-    def reactive_ability(self, name: str, action: Actions = None, trigger: str = None, effect: str = None,
+    def reactive_ability(self, name: str, action: Actions = None, desc: str = None, trigger: str = None, effect: str = None,
                          frequency: str = None):
         self._reactive_abilities.append({"name": name, "action": action, "trigger": trigger, "effect": effect,
-                                         "frequency": frequency})
+                                         "desc": desc, "frequency": frequency})
 
-    def interaction_ability(self, name: str, action: Actions = None, trigger: str = None, effect: str = None,
-                            frequency: str = None):
+    def interaction_ability(self, name: str, action: Actions = None, desc: str = None, trigger: str = None,
+                            effect: str = None, frequency: str = None):
         self._interaction_abilities.append({"name": name, "action": action, "trigger": trigger, "effect": effect,
-                                            "frequency": frequency})
+                                            "desc": desc, "frequency": frequency})
 
     def speed(self, speed: str):
         self._speed = speed
