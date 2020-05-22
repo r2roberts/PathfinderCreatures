@@ -2,3 +2,4 @@ Dockerfile
 index.html
 nginx.conf
 .vscode/
+python/generate_html.py

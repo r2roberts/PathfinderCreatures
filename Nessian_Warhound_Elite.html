@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Nessian Warhound (Elite)</title>
+    <link rel="stylesheet" href="CSS/creatures.css"/>
+    <script src="js/creatures.js"></script>
+  </head>
+  <body>
+    <creature>
+      <name>Nessian Warhound (Elite)</name>
+      <level>10</level>
+      <stats>
+        <traits>
+          <alignment>LE</alignment>
+          <size>LARGE</size>
+          <trait>BEAST</trait>
+          <trait>FIEND</trait>
+          <trait>FIRE</trait>
+        </traits>
+        <perception>+21; darkvision, scent(imprecise) 120 feet</perception>
+        <languages>Infernal(can&#8217;t speak any language)</languages>
+        <skills>
+          <skill>Acrobatics +20,</skill>
+          <skill>Athletics +21,</skill>
+          <skill>Stealth +20,</skill>
+          <skill>Survival +22 (+24 to Track)</skill>
+        </skills>
+        <Str>+6</Str>
+        <Dex>+5</Dex>
+        <Con>+5</Con>
+        <Int>&#8211;2</Int>
+        <Wis>+4</Wis>
+        <Cha>&#8211;2</Cha>
+      </stats>
+      <stats>
+        <div>
+          <ac>30</ac>
+          <Fort>+23</Fort>
+          <Ref>+21</Ref>
+          <Will>+18</Will>
+        </div>
+        <rule>
+          <hp>180</hp>
+          <immunities>fire</immunities>
+          <weaknesses>cold 10</weaknesses>
+        </rule>
+        <rule name="Hellish Revenge">
+          <r0></r0>
+          <trigger>The Nessian warhound is critically hit by any Strike.</trigger>
+          <effect>The Nessian warhound&#8217;s Breath Weapon recharges. It can immediately use it as part of this reaction.</effect>
+        </rule>
+      </stats>
+      <stats>
+        <speed>40 feet</speed>
+        <melee>
+          <a1></a1>
+          <span>jaws + 23 (magical), </span>
+          <damage>2d8+8 piercing plus 1d6 evil and 2d6 fire</damage>
+        </melee>
+        <rule name="Breath Weapon">
+          <a1></a1>
+          <span>(divine, evocation, fire) The warhound breathes flames that deal 11d6 fire damage to all creatures in a 15-foot cone (DC 30 basic Reflex save.) The warhound can&#8217;t use Breath Weapon again for 1d4 rounds. If the Nessian warhound would take fire damage or be targeted by a fire effect, its Breath Weapon recharges.</span>
+        </rule>
+      </stats>
+    </creature>
+  </body>
+</html>
