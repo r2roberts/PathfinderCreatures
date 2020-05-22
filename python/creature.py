@@ -24,14 +24,17 @@ class Spells(object):
     }
 
     @classmethod
-    def to_level(cls, lvl: int) -> str:
+    def to_level(cls, lvl) -> str:
         lvl_str = cls.levels.get(lvl, f"{lvl}th")
         return lvl_str
 
-    def __init__(self, lvl: int, is_cantrip: bool = False) -> None:
+    def __init__(self, lvl, is_cantrip: bool = False) -> None:
         self._spells = []
-        lvl_str = self.to_level(lvl)
-        self._lvl = f"Cantrips ({lvl_str})" if is_cantrip else lvl_str
+        if lvl is not None:
+            lvl_str = self.to_level(lvl)
+            self._lvl = f"Cantrips ({lvl_str})" if is_cantrip else lvl_str
+        else:
+            self._lvl = None
 
     def spell(self, name, id=None):
         self._spells.append(Spell(name, id=id))
@@ -44,7 +47,7 @@ class SpellGroup(object):
         self._dc = dc
         self._spells = []
 
-    def spells(self, lvl: int, is_cantrip: bool = False) -> Spells:
+    def spells(self, lvl=None, is_cantrip: bool = False) -> Spells:
         spells = Spells(lvl, is_cantrip=is_cantrip)
         self._spells.append(spells)
         return spells
@@ -137,7 +140,7 @@ class Creature(object):
         self._offensive_abilities.append({"name": name, "action": action, "trigger": trigger, "effect": effect,
                                           "desc": desc, "frequency": frequency})
 
-    def spell_group(self, name: str, dc: int, desc: str) -> SpellGroup:
+    def spell_group(self, name: str, desc=None, dc=None) -> SpellGroup:
         sg = SpellGroup(name, dc, desc)
         self._spell_groups.append(sg)
         return sg

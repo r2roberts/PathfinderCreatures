@@ -69,11 +69,18 @@ def add_spell_groups(elem, spell_groups):
 
     for sg in spell_groups:
         rule = SE(elem, "rule", name=sg._name)
-        dc_e = SE(rule, "dc")
-        dc_e.text = str(sg._dc)
-        dc_e.tail = ", " + sg._desc + "; "
+        if sg._dc is not None:
+            dc_e = SE(rule, "dc")
+            dc_e.text = str(sg._dc) + ", "
+
+        if sg._desc is not None:
+            sp = SE(rule, "span")
+            sp.text = sg._desc + "; "
+
         for sps in sg._spells:
-            sps_e = SE(rule, "spells", level=sps._lvl)
+            sps_e = SE(rule, "spells")
+            if sps._lvl is not None:
+                sps_e.set("level", sps._lvl)
             add_spells(sps_e, sps)
 
 
