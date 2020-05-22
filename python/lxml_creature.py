@@ -78,14 +78,14 @@ def add_routine(elem, routine):
 def add_hardness(elem, hardness, immunities, weaknesses, resistances):
 
     h = hardness
-    name = h.get("part") + " " if h.get("part") else ""
+    name = h.part + " " if h.part else ""
     name += "Hardness"
     rule = SE(elem, "rule", name=name)
-    rule.text = h["hardness"]
+    rule.text = h.hardness
     sp = SE(rule, "span")
     sp.text = "; "
     hp_el = SE(rule, "HP")
-    hp_el.text = h["hp"] + f" (BT {h['bt']})" if h.get("bt") else ""
+    hp_el.text = h.hp + f" (BT {h.bt})" if h.bt else ""
     sp = SE(rule, "span")
     sp.text = " "
     if immunities is not None:
@@ -184,37 +184,37 @@ def add_melee(elem, melees):
 def add_attack(tag, elem, attacks):
     for a in attacks:
         a_e = SE(elem, tag)
-        delim = ", " if a.get("damage") is not None else ""
+        delim = ", " if a.damage is not None else ""
 
-        if a.get("action") is not None:
-            ac_e = SE(a_e, actions[a["action"]])
+        if a.action is not None:
+            ac_e = SE(a_e, actions[a.action])
             ac_e.text = ""
         s_e = SE(a_e, "span")
-        s_e.text = a["desc"] + delim
-        if a.get("damage") is not None:
+        s_e.text = a.desc + delim
+        if a.damage is not None:
             d_e = SE(a_e, "damage")
-            d_e.text = a["damage"]
+            d_e.text = a.damage
 
 
 def add_abilities(elem, abililties):
 
     for a in abililties:
-        rule = SE(elem, "rule", name=a["name"])
-        if a.get("action") is not None:
-            a_i = SE(rule, actions[a["action"]])
+        rule = SE(elem, "rule", name=a.name)
+        if a.action is not None:
+            a_i = SE(rule, actions[a.action])
             a_i.text = ""
-        if a.get("desc") is not None:
+        if a.desc is not None:
             sp = SE(rule, "span")
-            sp.text = a["desc"]
-        if a.get("trigger") is not None:
+            sp.text = a.desc
+        if a.trigger is not None:
             trigger = SE(rule, "trigger")
-            trigger.text = a["trigger"]
-        if a.get("frequency") is not None:
+            trigger.text = a.trigger
+        if a.frequency is not None:
             freq = SE(rule, "frequency")
-            freq.text = a["frequency"] + "; "
-        if a.get("effect") is not None:
+            freq.text = a.frequency + "; "
+        if a.effect is not None:
             ef = SE(rule, "effect")
-            ef.text = a["effect"]
+            ef.text = a.effect
 
 
 def add_hp_immunities(elem, hp, immunities, weaknesses, resistances):

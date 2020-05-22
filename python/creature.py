@@ -1,4 +1,5 @@
 from enum import Enum
+import collections
 
 
 class Actions(Enum):
@@ -7,6 +8,14 @@ class Actions(Enum):
     ONE = 1
     TWO = 2
     THREE = 3
+
+
+Ability = collections.namedtuple('Ability',
+                                 ["name", "action", "trigger", "effect", "desc", "frequency"])
+
+Attack = collections.namedtuple('Attack', ["desc", "action", "damage"])
+
+Hardness = collections.namedtuple('Hardness', ["hardness", "part", "hp", "bt"])
 
 
 class Spell(object):
@@ -94,19 +103,21 @@ class NPC(object):
 
     def reactive_ability(self, name: str, action: Actions = None, desc: str = None, trigger: str = None, effect: str = None,
                          frequency: str = None):
-        self._reactive_abilities.append({"name": name, "action": action, "trigger": trigger, "effect": effect,
-                                         "desc": desc, "frequency": frequency})
+        a = Ability(name, action, trigger, effect, desc, frequency)
+        self._reactive_abilities.append(a)
 
     def melee(self, desc: str, action: Actions = None, damage: str = None):
-        self._melees.append({"desc": desc, "action": action, "damage": damage})
+        a = Attack(desc, action, damage)
+        self._melees.append(a)
 
     def ranged(self, desc: str, action: Actions = None, damage: str = None):
-        self._ranged.append({"desc": desc, "action": action, "damage": damage})
+        a = Attack(desc, action, damage)
+        self._ranged.append(a)
 
     def offensive_ability(self, name: str, action: Actions = None, trigger: str = None, effect: str = None,
                           desc: str = None, frequency: str = None):
-        self._offensive_abilities.append({"name": name, "action": action, "trigger": trigger, "effect": effect,
-                                          "desc": desc, "frequency": frequency})
+        a = Ability(name, action, trigger, effect, desc, frequency)
+        self._offensive_abilities.append(a)
 
 
 class Hazard(NPC):
@@ -129,8 +140,7 @@ class Hazard(NPC):
         self._disable = disable
 
     def hardness(self, hardness: str, hp: str, bt: str, part=None):
-        self._hardness = {"hardness": hardness,
-                          "part": part, "hp": hp, "bt": bt}
+        self._hardness = Hardness(hardness, part, hp, bt)
 
     def routine(self, desc: str):
         self._routine = desc
@@ -170,8 +180,8 @@ class Creature(NPC):
 
     def interaction_ability(self, name: str, action: Actions = None, desc: str = None, trigger: str = None,
                             effect: str = None, frequency: str = None):
-        self._interaction_abilities.append({"name": name, "action": action, "trigger": trigger, "effect": effect,
-                                            "desc": desc, "frequency": frequency})
+        a = Ability(name, action, trigger, effect, desc, frequency)
+        self._interaction_abilities.append(a)
 
     def speed(self, speed: str):
         self._speed = speed
