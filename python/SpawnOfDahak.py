@@ -17,7 +17,7 @@ c.immunities("fire, paralyzed, sleep")
 c.reactive_ability("Tail Swipe", action=Actions.REACTION, trigger="A creature within reach of Racharak’s tail uses a move action or leaves a square during a move action it’s using.",
                    effect="Racharak makes a tail Strike at the creature with a –2 penalty. If it hits, it disrupts the creature’s action.")
 c.speed("30 feet, climb 30 feet")
-c.melee("warhammer +21 (shove)", action=Actions.ONE,
+c.melee("warhammer +21 (magical, shove)", action=Actions.ONE,
         damage="2d8+9 bludgeoning (plus 1d5 fire if red-hot)")
 c.melee("jaws + 20", action=Actions.ONE, damage="2d8+9 piercing plus 2d4 fire")
 c.melee("claw + 20 (agile)", action=Actions.ONE, damage="2d8+9 slashing")

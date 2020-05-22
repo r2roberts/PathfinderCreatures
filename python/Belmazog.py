@@ -22,6 +22,7 @@ c.melee("jaws + 20", action=Actions.ONE,
 c.melee("claw + 20 (agile)", action=Actions.ONE, damage="2d8+11 slashing")
 c.melee("tongue + 20 (reach 10 feet)", action=Actions.ONE,
         damage="2d6+11 acid plus tongue grab")
+
 sg = c.spell_group("Divine Prepared Spells", dc=27,
                    desc="attack +19")
 spells = sg.spells(5)
@@ -48,6 +49,8 @@ sg = c.spell_group("Rituals")
 spells = sg.spells()
 spells.spell("nul-acrumi vazghul")
 spells.spell("planar ally")
+
+
 c.offensive_ability("Breath Weapon", action=Actions.TWO,
                     desc="(arcane, acid); Belmazog spews a gout of acid that deals 10d6 acid damage in a 30-foot cone (DC 28 basic Reflex save). Belmazog can’t use Breath Weapon again for 1d4 rounds.")
 c.offensive_ability("Drowning Drone", action=Actions.REACTION, desc="(auditory, mental)", trigger="The boggard swampseer or one of its allies within 60 feet attempts a saving throw against an auditory or sonic effect.",
