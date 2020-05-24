@@ -4,3 +4,4 @@ nginx.conf
 .vscode/
 python/generate_html.py
 favicon.ico
+PathfinderCreatures.code-workspace
