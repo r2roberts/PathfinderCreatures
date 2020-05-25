@@ -6,7 +6,7 @@ c.traits("COMPLEX", "MAGICAL", "TRAP")
 c.stealth(
     "+22 (expert) to notice subtle vapors of magical energy seething across the doors")
 c.description("These heavy doors, carved with an image of Dahak, echo with a hatred so powerful that it can kill anyone who comes nearby, manifesting a vision of Dahak’s head emerging from the doors to strike at a foe.")
-c.disable("Thievery DC 29 (expert) to disrupt the divine magic, Religion DC 29 (expert) to placate the wrathful energies, or dispel magic (5th level counteract DC 26).")
+c.disable("Thievery DC 29 (expert) to disrupt the divine magic, Religion DC 29 (expert) to placate the wrathful energies, or dispel magic (5th level; counteract DC 26).")
 c.ac("30")
 c.saves("Fort +22", "Ref +14")
 c.hardness("18", hp="72", bt="36", part="Door")

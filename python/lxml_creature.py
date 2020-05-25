@@ -41,6 +41,7 @@ def add_hazard(body, h):
     add_description(stats, h._description)
 
     stats = SE(hazard, "stats")
+    add_disable(stats, h._disable)
     add_ac_saves(stats, h._ac, h._saves)
     add_hardness(stats, h._hardness, h._immunities,
                  h._weaknesses, h._resistances)
@@ -58,6 +59,11 @@ def add_hazard(body, h):
     if h._reset is not None:
         stats = SE(hazard, "stats")
         add_reset(stats, h._reset)
+
+
+def add_disable(elem, disable):
+    disable_e = SE(elem, "disable")
+    disable_e.text = disable
 
 
 def add_reset(elem, reset):
