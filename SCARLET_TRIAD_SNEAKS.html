@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SCARLET TRIAD SNEAKS</title>
+    <link rel="stylesheet" href="CSS/creatures.css"/>
+    <script src="js/creatures.js"></script>
+  </head>
+  <body>
+    <creature>
+      <name>SCARLET TRIAD SNEAKS</name>
+      <level>6</level>
+      <stats>
+        <traits>
+          <uncommon>UNCOMMON</uncommon>
+          <alignment>CE</alignment>
+          <size>MEDIUM</size>
+          <trait>HUMAN</trait>
+          <trait>HUMANOID</trait>
+        </traits>
+        <perception>+12</perception>
+        <languages>Common</languages>
+        <skills>
+          <skill>Acrobatics +14,</skill>
+          <skill>Athletics +10,</skill>
+          <skill>Deception +12,</skill>
+          <skill>Intimidation +10,</skill>
+          <skill>Stealth +16,</skill>
+          <skill>Thievery +14</skill>
+        </skills>
+        <Str>+2</Str>
+        <Dex>+4</Dex>
+        <Con>+2</Con>
+        <Int>+0</Int>
+        <Wis>+0</Wis>
+        <Cha>+2</Cha>
+        <items>
+          <magic>bloodseeker beak (affixed to rapier),</magic>
+          <span>dagger(3),</span>
+          <span>keys to manacles,</span>
+          <span>leather armor,</span>
+          <span>average manacles (marked with the symbol of the Scarlet Triad),</span>
+          <magic>+1 rapier,</magic>
+          <span>thieves&#8217; tools</span>
+        </items>
+      </stats>
+      <stats>
+        <div>
+          <ac>25</ac>
+          <Fort>+10</Fort>
+          <Ref>+14</Ref>
+          <Will>+12</Will>
+        </div>
+        <rule>
+          <hp>95</hp>
+        </rule>
+        <rule name="Nimble Dodge">
+          <r0></r0>
+          <requirements>A sneak can&#8217;t use this reaction while encumbered.</requirements>
+          <trigger>The sneak is hit by an attack made by a creature the sneak can see.</trigger>
+          <effect>The sneak gains a +2 circumstance bonus to their Armor Class against the triggering attack.</effect>
+        </rule>
+        <rule name="Deny Advantage">
+          <span>The sneak isn&#8217;t flat-footed to hidden, undetected, or flanking creatures of 6th level or lower, or creatures of 6th level or lower using surprise attack.</span>
+        </rule>
+        <rule name="Mobility">
+          <span>When the sneak takes a Stride action to move half their Speed or less, that movement does not trigger reactions.</span>
+        </rule>
+      </stats>
+      <stats>
+        <speed>25 feet</speed>
+        <melee>
+          <a1></a1>
+          <span>rapier +17 (deadly 1d8, disarm, finesse), </span>
+          <damage>1d6+5 piercing</damage>
+        </melee>
+        <melee>
+          <a1></a1>
+          <span>dagger +16 (agile, finesse, versatile S), </span>
+          <damage>1d4+4 piercing</damage>
+        </melee>
+        <ranged>
+          <a1></a1>
+          <span>dagger + 16 (agile, thrown 10 feet, versatile S), </span>
+          <damage>1d4+4 piercing</damage>
+        </ranged>
+        <rule name="Efficient Capture">
+          <a3></a3>
+          <span>(attack, manipulate)</span>
+          <requirements>The sneak has manacles in hand and is adjacent to a creature.</requirements>
+          <effect>The sneak attempts to bind the creature&#8217;s wrists or ankles with the manacles. If the sneak succeeds at an attack roll with a +16 modifier against the target&#8217;s AC, they apply the manacles.</effect>
+        </rule>
+        <rule name="Sneak Attack">
+          <span>2d6</span>
+        </rule>
+        <rule name="Surprise Attack">
+          <span>In the first round of combat, creatures that haven&#8217;t acted yet are flat-footed to the sneak.</span>
+        </rule>
+      </stats>
+    </creature>
+  </body>
+</html>
