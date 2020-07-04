@@ -20,7 +20,7 @@ Hardness = collections.namedtuple('Hardness', ["hardness", "part", "hp", "bt"])
 
 class Spell(object):
 
-    def __init__(self, name: str, id: str = None) -> None:
+    def __init__(self, name: str, *, id: str = None) -> None:
         self._name = name
         self._id = id
 
@@ -37,7 +37,7 @@ class Spells(object):
         lvl_str = cls.levels.get(lvl, f"{lvl}th")
         return lvl_str
 
-    def __init__(self, lvl, is_cantrip: bool = False) -> None:
+    def __init__(self, lvl, *, is_cantrip: bool = False) -> None:
         self._spells = []
         if lvl is not None:
             lvl_str = self.to_level(lvl)
@@ -45,25 +45,25 @@ class Spells(object):
         else:
             self._lvl = None
 
-    def spell(self, name, id=None):
+    def spell(self, name, *, id=None):
         self._spells.append(Spell(name, id=id))
 
 
 class SpellGroup(object):
-    def __init__(self, name: str, dc: int, desc: str) -> None:
+    def __init__(self, name: str, *, dc: int, desc: str) -> None:
         self._name = name
         self._desc = desc
         self._dc = dc
         self._spells = []
 
-    def spells(self, lvl=None, is_cantrip: bool = False) -> Spells:
+    def spells(self, lvl, *, is_cantrip: bool = False) -> Spells:
         spells = Spells(lvl, is_cantrip=is_cantrip)
         self._spells.append(spells)
         return spells
 
 
 class NPC(object):
-    def __init__(self, name: str, lvl: int = 0) -> None:
+    def __init__(self, name: str, *, lvl: int = 0) -> None:
         self._name = name
         self._lvl = lvl
 
@@ -108,11 +108,11 @@ class NPC(object):
                     desc=desc, frequency=frequency, requirements=requirements)
         self._reactive_abilities.append(a)
 
-    def melee(self, desc: str, action: Actions = None, damage: str = None):
+    def melee(self, desc: str, action: Actions = None, *, damage: str = None):
         a = Attack(desc, action, damage)
         self._melees.append(a)
 
-    def ranged(self, desc: str, action: Actions = None, damage: str = None):
+    def ranged(self, desc: str, action: Actions = None, *, damage: str = None):
         a = Attack(desc, action, damage)
         self._ranged.append(a)
 
@@ -125,8 +125,8 @@ class NPC(object):
 
 
 class Hazard(NPC):
-    def __init__(self, name: str, lvl: int = 0) -> None:
-        super().__init__(name, lvl)
+    def __init__(self, name: str, *, lvl: int = 0) -> None:
+        super().__init__(name, lvl=lvl)
         self._stealth = None
         self._routine = None
         self._description = None
@@ -143,7 +143,7 @@ class Hazard(NPC):
     def disable(self, disable: str):
         self._disable = disable
 
-    def hardness(self, hardness: str, hp: str, bt: str, part=None):
+    def hardness(self, hardness: str, *, hp: str, bt: str, part=None):
         self._hardness = Hardness(hardness, part, hp, bt)
 
     def routine(self, desc: str):
@@ -154,8 +154,8 @@ class Hazard(NPC):
 
 
 class Creature(NPC):
-    def __init__(self, name: str, lvl: int = 0) -> None:
-        super().__init__(name, lvl)
+    def __init__(self, name: str, *, lvl: int = 0) -> None:
+        super().__init__(name, lvl=lvl)
 
         self._languages = None
         self._skills = None
@@ -176,23 +176,23 @@ class Creature(NPC):
     def attrs(self, *attrs):
         self._attrs = attrs
 
-    def item(self, item: str, magic: bool = False):
+    def item(self, item: str, *, magic: bool = False):
         self._items.append((item, magic))
 
     def hp(self, hp: str):
         self._hp = hp
 
     def interaction_ability(self, name: str, action: Actions = None, *,
-                            desc: str = None, trigger: str = None,
+                            desc: str = None, requirements: str = None, trigger: str = None,
                             effect: str = None, frequency: str = None):
         a = Ability(name=name, action=action, trigger=trigger,
-                    effect=effect, desc=desc, frequency=frequency)
+                    effect=effect, desc=desc, frequency=frequency, requirements=requirements)
         self._interaction_abilities.append(a)
 
     def speed(self, speed: str):
         self._speed = speed
 
-    def spell_group(self, name: str, desc=None, dc=None) -> SpellGroup:
-        sg = SpellGroup(name, dc, desc)
+    def spell_group(self, name: str, *, desc=None, dc=None) -> SpellGroup:
+        sg = SpellGroup(name, dc=dc, desc=desc)
         self._spell_groups.append(sg)
         return sg
