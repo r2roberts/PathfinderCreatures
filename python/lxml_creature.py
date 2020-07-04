@@ -215,6 +215,9 @@ def add_abilities(elem, abililties):
         if a.trigger is not None:
             trigger = SE(rule, "trigger")
             trigger.text = a.trigger
+        if a.requirements is not None:
+            requirements = SE(rule, "requirements")
+            requirements.text = a.requirements
         if a.frequency is not None:
             freq = SE(rule, "frequency")
             freq.text = a.frequency + "; "

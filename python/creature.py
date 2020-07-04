@@ -11,7 +11,7 @@ class Actions(Enum):
 
 
 Ability = collections.namedtuple('Ability',
-                                 ["name", "action", "trigger", "effect", "desc", "frequency"])
+                                 ["name", "action", "trigger", "requirements", "effect", "desc", "frequency"])
 
 Attack = collections.namedtuple('Attack', ["desc", "action", "damage"])
 
@@ -101,9 +101,11 @@ class NPC(object):
     def resistances(self, resistances: str):
         self._resistances = resistances
 
-    def reactive_ability(self, name: str, action: Actions = None, desc: str = None, trigger: str = None, effect: str = None,
+    def reactive_ability(self, name: str, action: Actions = None, *, desc: str = None,
+                         trigger: str = None, requirements: str = None, effect: str = None,
                          frequency: str = None):
-        a = Ability(name, action, trigger, effect, desc, frequency)
+        a = Ability(name=name, action=action, trigger=trigger, effect=effect,
+                    desc=desc, frequency=frequency, requirements=requirements)
         self._reactive_abilities.append(a)
 
     def melee(self, desc: str, action: Actions = None, damage: str = None):
@@ -114,9 +116,11 @@ class NPC(object):
         a = Attack(desc, action, damage)
         self._ranged.append(a)
 
-    def offensive_ability(self, name: str, action: Actions = None, trigger: str = None, effect: str = None,
+    def offensive_ability(self, name: str, action: Actions = None, *, requirements: str = None,
+                          trigger: str = None, effect: str = None,
                           desc: str = None, frequency: str = None):
-        a = Ability(name, action, trigger, effect, desc, frequency)
+        a = Ability(name=name, action=action, trigger=trigger,
+                    effect=effect, desc=desc, frequency=frequency, requirements=requirements)
         self._offensive_abilities.append(a)
 
 
@@ -178,9 +182,11 @@ class Creature(NPC):
     def hp(self, hp: str):
         self._hp = hp
 
-    def interaction_ability(self, name: str, action: Actions = None, desc: str = None, trigger: str = None,
+    def interaction_ability(self, name: str, action: Actions = None, *,
+                            desc: str = None, trigger: str = None,
                             effect: str = None, frequency: str = None):
-        a = Ability(name, action, trigger, effect, desc, frequency)
+        a = Ability(name=name, action=action, trigger=trigger,
+                    effect=effect, desc=desc, frequency=frequency)
         self._interaction_abilities.append(a)
 
     def speed(self, speed: str):

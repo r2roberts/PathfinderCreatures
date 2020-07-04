@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HEUBERK THROPP</title>
+    <link rel="stylesheet" href="CSS/creatures.css"/>
+    <script src="js/creatures.js"></script>
+  </head>
+  <body>
+    <creature>
+      <name>HEUBERK THROPP</name>
+      <level>9</level>
+      <stats>
+        <traits>
+          <unique>UNIQUE</unique>
+          <alignment>LE</alignment>
+          <size>MEDIUM</size>
+          <trait>HUMAN</trait>
+          <trait>HUMANOID</trait>
+        </traits>
+        <perception>+14;</perception>
+        <languages>Common, Dwarven, Elven, Gnoll, Halfling</languages>
+        <skills>
+          <skill>Athletics +16,</skill>
+          <skill>Deception +21,</skill>
+          <skill>Diplomacy +15,</skill>
+          <skill>Intimidation +19,</skill>
+          <skill>Mercantile Lore +16,</skill>
+          <skill>Society +16,</skill>
+          <skill>Thievery +16</skill>
+        </skills>
+        <Str>+3</Str>
+        <Dex>+2</Dex>
+        <Con>+3</Con>
+        <Int>+1</Int>
+        <Wis>+1</Wis>
+        <Cha>+4</Cha>
+        <items>
+          <span>dagger(3),</span>
+          <span>keys to manacles,</span>
+          <span>leather armor,</span>
+          <span>+1 striking mace,</span>
+          <span>average manacles(marked with the symbol of the Scarlet Triad),</span>
+          <span>spellbook,</span>
+          <span>infiltrator&#8217;s thieves tools</span>
+        </items>
+      </stats>
+      <stats>
+        <div>
+          <ac>28</ac>
+          <Fort>+21</Fort>
+          <Ref>+15</Ref>
+          <Will>+18</Will>
+        </div>
+        <rule>
+          <hp>155</hp>
+        </rule>
+        <rule name="Timely Distraction">
+          <r0></r0>
+          <trigger>A creature Heuberk can see within his melee reach misses him with a melee Strike.</trigger>
+          <effect>Heuberk attempts to Feint the creature. If it&#8217;s not Heuberk&#8217;s turn and he gets a success, the effect applies on his next turn.</effect>
+        </rule>
+      </stats>
+      <stats>
+        <speed>25 feet</speed>
+        <melee>
+          <a1></a1>
+          <span>mace +19 (shove), </span>
+          <damage>2d6+9 bludgeoning</damage>
+        </melee>
+        <melee>
+          <a1></a1>
+          <span>dagger +18 (agile, versatile S), </span>
+          <damage>1d4+9 piercing</damage>
+        </melee>
+        <ranged>
+          <a1></a1>
+          <span>dagger +17 (agile, thrown 10 feet, versatile S), </span>
+          <damage>1d4+9 piercing</damage>
+        </ranged>
+        <rule name="Occult Prepared Spells">
+          <dc>27, </dc>
+          <span>attack +19; </span>
+          <spells level="5th"><spell>crushing despair</spell> </spells>
+          <spells level="4th"><spell>discern lies</spell> <spell>fly</spell> </spells>
+          <spells level="3rd"><spell>dream message</spell> <spell>enthrall</spell> <spell>hypnotic pattern</spell> </spells>
+          <spells level="2nd"><spell>invisibility</spell> <spell>mirror image</spell> <spell>paranoia</spell> </spells>
+          <spells level="1st"><spell>charm</spell> <spell>command</spell> <spell>fear</spell> <spell>ray of enfeeblement</spell> </spells>
+          <spells level="Cantrips (5th)"><spell>detect magic</spell> <spell>message</spell> <spell>prestidigitation</spell> <spell>read aura</spell> <spell>shield</spell> </spells>
+        </rule>
+        <rule name="Identify an Opening">
+          <a1></a1>
+          <span>(auditory, linguistic)</span>
+          <requirements>A creature is flat-footed against Heuberk&#8217;s next melee attack.</requirements>
+          <effect>Heuberk points out a lapse in the creature&#8217;s defenses. The creature is flat-footed against all melee attacks attempted by any of Heuberk&#8217;s allies who hear and understand this instruction until the start of Heuberk&#8217;s next turn.</effect>
+        </rule>
+        <rule name="Sneak Attack">
+          <span>2d6</span>
+        </rule>
+      </stats>
+    </creature>
+  </body>
+</html>
