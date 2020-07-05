@@ -38,17 +38,23 @@ sp = sg.spells(5)
 sp.spell("nightmare", id="208")
 sp.spell("shadow blast", desc="(x2, from heartstone)", id="273")
 sp = sg.spells(3)
-sp.spell("dream message", desc="(at will)")
-sp.spell("magic missile", desc="(at will)")
-"""
-2nd invisibility(at will)
-1st ray of enfeeblement(at will), sleep(at will)
-Constant(3rd) detect magic
-(2nd) detect alignment(all alignments simultaneously)
-Abyssal Plague(disease) A creature can’t recover from drained until abyssal plague is cured. Saving Throw DC 28 Fortitude
-Stage 1 Drained 1 (1 day)
-Stage 2 Drained increases by 2 (1 day)
-Change Shape Single Action(concentrate, occult, polymorph, transmutation) The night hag can take on the appearance of any Medium female humanoid. This doesn’t change her Speed or her attack and damage bonuses with her Strikes, but might change the damage type her Strikes deal(typically to bludgeoning).
-Dream Haunting(enchantment, occult, mental) If a night hag is ethereal and hovering over a sleeping chaotic or evil creature, she can ride the victim’s back until dawn. The creature endures tormenting dreams as the hag casts nightmare on it, and is exposed to abyssal plague. Any drained caused by dream haunting is cumulative. Only an ethereal being can confront the night hag and stop her dream haunting.
-Spell Ambush A creature flat-footed to the night hag takes a –2 circumstance penalty to checks and DCs to defend against her spells.
-"""
+sp.spell("dream message", desc="(at will)", id="90")
+sp.spell("magic missile", desc="(at will)", id="180")
+sp = sg.spells(2)
+sp.spell("invisibility", desc="(at will)", id="164")
+sp = sg.spells(1)
+sp.spell("ray of enfeeblement", desc="(at will)", id="244")
+sp.spell("sleep", desc="(at will)", id="288")
+sp = sg.spells(3, type="Constant")
+sp.spell("detect magic", id="66")
+sp = sg.spells(2, type="")
+sp.spell("detect alignment", desc="(all alignments simultaneously)", id="65")
+c.offensive_ability("Abyssal Plague",
+                    desc="(disease) A creature can’t recover from drained until abyssal plague is cured. Saving Throw DC 28 Fortitude; Stage 1 Drained 1 (1 day); Stage 2 Drained increases by 2 (1 day)")
+c.offensive_ability("Change Shape",
+                    Actions.ONE,
+                    desc="(concentrate, occult, polymorph, transmutation) The night hag can take on the appearance of any Medium female humanoid. This doesn’t change her Speed or her attack and damage bonuses with her Strikes, but might change the damage type her Strikes deal(typically to bludgeoning).")
+c.offensive_ability("Dream Haunting",
+                    desc="(enchantment, occult, mental) If a night hag is ethereal and hovering over a sleeping chaotic or evil creature, she can ride the victim’s back until dawn. The creature endures tormenting dreams as the hag casts nightmare on it, and is exposed to abyssal plague. Any drained caused by dream haunting is cumulative. Only an ethereal being can confront the night hag and stop her dream haunting.")
+c.offensive_ability("Spell Ambush",
+                    desc="A creature flat-footed to the night hag takes a –2 circumstance penalty to checks and DCs to defend against her spells.")

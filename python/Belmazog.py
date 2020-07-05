@@ -39,7 +39,7 @@ spells = sg.spells(2)
 spells.spell("ray of enfeeblement", id="244")
 spells.spell("see invisibility", id="271")
 
-spells = sg.spells(5, is_cantrip=True)
+spells = sg.spells(5, type="Cantrips")
 spells.spell("detect magic", id="66")
 spells.spell("forbidding ward", id="126")
 spells.spell("produce flame", id="236")

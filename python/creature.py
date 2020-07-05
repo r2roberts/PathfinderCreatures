@@ -39,11 +39,11 @@ class Spells(object):
         lvl_str = cls.levels.get(lvl, f"{lvl}th")
         return lvl_str
 
-    def __init__(self, lvl, *, is_cantrip: bool = False) -> None:
+    def __init__(self, lvl, *, type: str = None) -> None:
         self._spells = []
         if lvl is not None:
             lvl_str = self.to_level(lvl)
-            self._lvl = f"Cantrips ({lvl_str})" if is_cantrip else lvl_str
+            self._lvl = f"{type} ({lvl_str})" if type is not None else lvl_str
         else:
             self._lvl = None
 
@@ -58,8 +58,8 @@ class SpellGroup(object):
         self._dc = dc
         self._spells = []
 
-    def spells(self, lvl, *, is_cantrip: bool = False) -> Spells:
-        spells = Spells(lvl, is_cantrip=is_cantrip)
+    def spells(self, lvl, *, type: str = None) -> Spells:
+        spells = Spells(lvl, type=type)
         self._spells.append(spells)
         return spells
 
