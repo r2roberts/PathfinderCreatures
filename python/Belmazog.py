@@ -17,10 +17,10 @@ c.saves("Fort +18", "Ref +16", "Will +18")
 c.hp("145")
 c.immunities("acid, paralyzed, sleep")
 c.speed("40 feet, swim 40 feet")
-c.melee("jaws + 20", action=Actions.ONE,
+c.melee("jaws +20", action=Actions.ONE,
         damage="2d8+11 piercing plus 1d12 acid")
-c.melee("claw + 20 (agile)", action=Actions.ONE, damage="2d8+11 slashing")
-c.melee("tongue + 20 (reach 10 feet)", action=Actions.ONE,
+c.melee("claw +20 (agile)", action=Actions.ONE, damage="2d8+11 slashing")
+c.melee("tongue +20 (reach 10 feet)", action=Actions.ONE,
         damage="2d6+11 acid plus tongue grab")
 
 sg = c.spell_group("Divine Prepared Spells", dc=27,
