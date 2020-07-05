@@ -3,7 +3,7 @@ from creature import Actions
 
 c = creature.Hazard("TREE OF DREADFUL DREAMS", lvl=10)
 c.traits("RARE", "COMPLEX", "MAGICAL", "TRAP")
-c.stealth("+22 (expert); darkvision, see invisibility")
+c.stealth("+22 (expert)")
 
 c.description(
     "The statue of the willow tree animates, its branches lashing out to try to grab anyone in area B2.")
