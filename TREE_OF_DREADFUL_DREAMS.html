@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TREE OF DREADFUL DREAMS</title>
+    <link rel="stylesheet" href="CSS/creatures.css"/>
+    <script src="js/creatures.js"></script>
+  </head>
+  <body>
+    <hazard>
+      <name>TREE OF DREADFUL DREAMS</name>
+      <level>10</level>
+      <stats>
+        <traits>
+          <rare>RARE</rare>
+          <trait>COMPLEX</trait>
+          <trait>MAGICAL</trait>
+          <trait>TRAP</trait>
+        </traits>
+        <rule name="Stealth">+22 (expert); darkvision, see invisibility</rule>
+        <rule name="Description">The statue of the willow tree animates, its branches lashing out to try to grab anyone in area B2.</rule>
+      </stats>
+      <stats>
+        <disable>Athletics or Thievery DC 25 (trained) to force or lever open a single branch, disabling that branch and freeing any creature trapped within. Thievery DC 29 (expert) to disrupt the tree&#8217;s magical animation, shut it down, and free all trapped creatures. Placing a dreamstone in the tree&#8217;s trunk takes 2 Interact actions and causes the trap to shut down, freeing all trapped creatures. Placing the cursed dreamstone from area B4 in the trunk instead increases the tree&#8217;s actions per turn to 4 and gives it a +2 item bonus to all saving throws and attack rolls.</disable>
+        <div>
+          <ac>30</ac>
+          <Fort>+22</Fort>
+          <Ref>+14</Ref>
+        </div>
+        <rule name="Branch Hardness">10<span>; </span><HP>40 (BT 20)</HP><span> </span><span>to break each branch; </span><immunities>critical hits, object immunities, precision damage</immunities></rule>
+        <rule name="Attack of Opportunity">
+          <r0></r0>
+          <span>The tree of dreadful dreams can attempt up to six Attacks of Opportunity each round.</span>
+        </rule>
+      </stats>
+      <stats>
+        <rule name="Routine">(3 actions) The statue uses each action to attempt a branch Strike against a random creature in the room that it hasn&#8217;t grabbed. If there are no creatures for it to attack and it has at least one creature grabbed, it instead Constricts. The trap can have up to six creatures grabbed.</rule>
+        <melee>
+          <a1></a1>
+          <span>branch +26 (reach 20 feet), </span>
+          <damage>2d10+12 bludgeoning plus the target is grabbed by the tree; no multiple attack penalty</damage>
+        </melee>
+        <rule name="Constrict">
+          <a1></a1>
+          <span>1d10+12 bludgeoning, DC 27</span>
+        </rule>
+        <rule name="Terrifying Visions">
+          <span>A creature that begins its turn grabbed by the trap experiences vivid, warped visions of true events and must succeed at a DC 31 Will save or take 4d8 mental damage. On a critical failure, the creature also becomes doomed 1. A creature that succeeds at its save is temporarily immune for 24 hours.</span>
+        </rule>
+      </stats>
+      <stats>
+        <rule name="Reset">The trap deactivates and resets if it has no creatures grabbed and no creatures in the room to attack. If an uncursed dreamstone is placed in its trunk, the statue doesn&#8217;t reactivate.</rule>
+      </stats>
+    </hazard>
+  </body>
+</html>

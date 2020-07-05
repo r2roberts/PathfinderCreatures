@@ -15,7 +15,8 @@ Ability = collections.namedtuple('Ability',
 
 Attack = collections.namedtuple('Attack', ["desc", "action", "damage"])
 
-Hardness = collections.namedtuple('Hardness', ["hardness", "part", "hp", "bt"])
+Hardness = collections.namedtuple(
+    'Hardness', ["hardness", "part", "hp", "bt", "desc"])
 
 
 class Spell(object):
@@ -143,8 +144,9 @@ class Hazard(NPC):
     def disable(self, disable: str):
         self._disable = disable
 
-    def hardness(self, hardness: str, *, hp: str, bt: str, part=None):
-        self._hardness = Hardness(hardness, part, hp, bt)
+    def hardness(self, hardness: str, *, hp: str, bt: str, part=None, desc=None):
+        self._hardness = Hardness(
+            hardness=hardness, part=part, hp=hp, bt=bt, desc=desc)
 
     def routine(self, desc: str):
         self._routine = desc

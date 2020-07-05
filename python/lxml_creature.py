@@ -43,8 +43,8 @@ def add_hazard(body, h):
     stats = SE(hazard, "stats")
     add_disable(stats, h._disable)
     add_ac_saves(stats, h._ac, h._saves)
-    add_hardness(stats, h._hardness, h._immunities,
-                 h._weaknesses, h._resistances)
+    add_hardness(stats, hardness=h._hardness, immunities=h._immunities,
+                 weaknesses=h._weaknesses, resistances=h._resistances)
     add_abilities(stats, h._reactive_abilities)
 
     if h._routine is not None:
@@ -81,7 +81,7 @@ def add_routine(elem, routine):
     rule.text = routine
 
 
-def add_hardness(elem, hardness, immunities, weaknesses, resistances):
+def add_hardness(elem, *, hardness, immunities, weaknesses, resistances):
 
     h = hardness
     name = h.part + " " if h.part else ""
@@ -94,6 +94,9 @@ def add_hardness(elem, hardness, immunities, weaknesses, resistances):
     hp_el.text = h.hp + f" (BT {h.bt})" if h.bt else ""
     sp = SE(rule, "span")
     sp.text = " "
+    if h.desc is not None:
+        i_e = SE(rule, "span")
+        i_e.text = h.desc + "; "
     if immunities is not None:
         i_e = SE(rule, "immunities")
         i_e.text = immunities
