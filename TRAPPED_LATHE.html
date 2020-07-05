@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TRAPPED LATHE</title>
+    <link rel="stylesheet" href="CSS/creatures.css"/>
+    <script src="js/creatures.js"></script>
+  </head>
+  <body>
+    <hazard>
+      <name>TRAPPED LATHE</name>
+      <level>10</level>
+      <stats>
+        <traits>
+          <trait>COMPLEX</trait>
+          <trait>MECHANICAL</trait>
+          <trait>TRAP</trait>
+        </traits>
+        <rule name="Stealth">+19 (expert) DC 29 to notice the line of cord running from the lathe&#8217;s trigger toward the door to area A2.</rule>
+        <rule name="Description">The powered lathe&#8217;s springs have been critically overwound so that when jostled or triggered, the lathe unwinds violently, hurling blades, gears, and sharp shards of metal around the room.</rule>
+      </stats>
+      <stats>
+        <disable>Thievery DC 31 (expert) on the lathe releases the tension on its springs without unleashing its blades and gears.</disable>
+        <div>
+          <ac>30</ac>
+          <Fort>+22</Fort>
+          <Ref>+14</Ref>
+        </div>
+        <rule name="Hardness">18<span>; </span><HP>72 (BT 36)</HP><span> </span><immunities>critical hits, object immunities, precision damage</immunities></rule>
+        <rule name="Unleash Fragments">
+          <r0></r0>
+          <trigger>The lathe is jostled or damaged, or its trigger is remotely pulled.</trigger>
+          <effect>The trap makes a sharpened fragment Strike against a random target in area A1, then rolls for initiative.</effect>
+        </rule>
+      </stats>
+      <stats>
+        <rule name="Routine">(4 actions) The lathe attempts four sharpened fragment attacks against creatures in the room, selecting a target randomly from all available targets in area A1. The trap does not take multiple attack penalties for any of its attacks. The trap loses 1 action each turn as its springs wind down, and becomes disabled when it has 0 actions.</rule>
+        <ranged>
+          <a1></a1>
+          <span>sharpened fragment +26, </span>
+          <damage>2d8+12 slashing plus 1d8 persistent bleed damage on a critical hit</damage>
+        </ranged>
+      </stats>
+    </hazard>
+  </body>
+</html>
