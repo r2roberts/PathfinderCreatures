@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kelleni (Elite Night Hag)</title>
+    <link rel="stylesheet" href="CSS/creatures.css"/>
+    <script src="js/creatures.js"></script>
+  </head>
+  <body>
+    <creature>
+      <name>Kelleni (Elite Night Hag)</name>
+      <level>10</level>
+      <stats>
+        <traits>
+          <alignment>NE</alignment>
+          <size>Medium</size>
+          <trait>Fiend</trait>
+          <trait>Hag</trait>
+          <trait>Humanoid</trait>
+        </traits>
+        <perception>+18 darkvision</perception>
+        <languages>Abyssal, Aklo, Celestial, Common, Infernal</languages>
+        <skills>
+          <skill>Arcana +18,</skill>
+          <skill>Deception +18,</skill>
+          <skill>Diplomacy +18,</skill>
+          <skill>Intimidation +14,</skill>
+          <skill>Occultism + 20,</skill>
+          <skill>Religion + 20</skill>
+        </skills>
+        <Str>+5</Str>
+        <Dex>+4</Dex>
+        <Con>+6</Con>
+        <Int>+4</Int>
+        <Wis>+5</Wis>
+        <Cha>+3</Cha>
+        <items>
+          <magic>heartstone</magic>
+        </items>
+      </stats>
+      <stats>
+        <div>
+          <ac>28</ac>
+          <Fort>+19</Fort>
+          <Ref>+17</Ref>
+          <Will>+18;</Will>
+          <span>+2 status to all saves vs. magic, &#8211;2 to all saves if the night hag does not have her heartstone</span>
+        </div>
+        <rule>
+          <hp>170</hp>
+          <immunities>sleep;</immunities>
+          <weaknesses>cold iron 10;</weaknesses>
+          <resistances>mental 10;</resistances>
+        </rule>
+      </stats>
+      <stats>
+        <speed>25 feet</speed>
+        <melee>
+          <a1></a1>
+          <span>jaws +20 [+15/+10](magical), </span>
+          <damage>2d8+8 piercing plus 1d6 evil and Abyssal plague</damage>
+        </melee>
+        <melee>
+          <a1></a1>
+          <span>claw +20 [+16/+12](agile, magical), </span>
+          <damage>2d10+8 slashing plus 1d6 evil</damage>
+        </melee>
+        <rule name="Occult Innate Spells">
+          <dc>28, </dc>
+          <spells level="9th"><spell spellId="21">bind soul</spell> <span> (at will from heartstone)</span>, <spell spellId="105">ethereal jaunt</spell> <span> (at will from heartstone)</span>;</spells>
+          <spells level="8th"><spell spellId="89">dream council</spell>;</spells>
+          <spells level="5th"><spell spellId="208">nightmare</spell>, <spell spellId="273">shadow blast</spell> <span> (x2, from heartstone)</span>;</spells>
+          <spells level="3rd"><spell>dream message</spell> <span> (at will)</span>, <spell>magic missile</spell> <span> (at will)</span>;</spells>
+        </rule>
+      </stats>
+    </creature>
+  </body>
+</html>

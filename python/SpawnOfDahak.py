@@ -5,7 +5,7 @@ c = creature.Creature("Spawn of Dahak", lvl=8)
 c.traits("Rare", "CE", "SMALL", "CHARAU-KA", "DRAGON", "FIRE", "HUMANOID")
 c.perception("+16; darkvision, scent(imprecise) 30 feet")
 c.languages("Draconic, Mwangi")
-c.item("+1 striking warhammer", True)
+c.item("+1 striking warhammer", magic=True)
 
 c.skills("Arcana +12", "Athletics +18", "Crafting +10",
          "Intimidation +17", "Religion +14", "Stealth +15", "Survival +14")

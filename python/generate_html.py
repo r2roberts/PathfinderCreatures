@@ -1,12 +1,18 @@
-from TrappedLathe import c
 import lxml_creature as lc
 
-print(lc.to_html(c))
 
-filename = "../" + \
-    c._name.replace(' ', '_').replace('(', '').replace(')', '') + '.html'
-print(filename)
+def generate(c):
+    print(lc.to_html(c))
 
-with open(filename, "w") as fp:
-    fp.write(lc.to_html(c))
-print(f"{filename} written")
+    filename = "../" + \
+        c._name.replace(' ', '_').replace('(', '').replace(')', '') + '.html'
+    print(filename)
+
+    with open(filename, "w") as fp:
+        fp.write(lc.to_html(c))
+    print(f"{filename} written")
+
+
+if __name__ == "__main__":
+    from Kelleni import c
+    generate(c)

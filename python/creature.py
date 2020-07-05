@@ -21,9 +21,10 @@ Hardness = collections.namedtuple(
 
 class Spell(object):
 
-    def __init__(self, name: str, *, id: str = None) -> None:
+    def __init__(self, name: str, *, id: str = None, desc: str = None) -> None:
         self._name = name
         self._id = id
+        self._desc = desc
 
 
 class Spells(object):
@@ -46,8 +47,8 @@ class Spells(object):
         else:
             self._lvl = None
 
-    def spell(self, name, *, id=None):
-        self._spells.append(Spell(name, id=id))
+    def spell(self, name, *, id=None, desc=None):
+        self._spells.append(Spell(name, id=id, desc=desc))
 
 
 class SpellGroup(object):
@@ -71,6 +72,7 @@ class NPC(object):
         self._perception = None
         self._ac = None
         self._saves = None
+        self._saves_desc = None
 
         self._hp = None
         self._immunities = None
@@ -87,8 +89,9 @@ class NPC(object):
     def perception(self, perception: str):
         self._perception = perception
 
-    def saves(self, *saves):
+    def saves(self, *saves, desc: str = None):
         self._saves = saves
+        self._saves_desc = desc
 
     def ac(self, ac: str):
         self._ac = ac
@@ -162,6 +165,7 @@ class Creature(NPC):
         self._languages = None
         self._skills = None
         self._hp = None
+        self._ability_modifiers = []
         self._items = []
         self._interaction_abilities = []
 
@@ -177,6 +181,13 @@ class Creature(NPC):
 
     def attrs(self, *attrs):
         self._attrs = attrs
+
+    def ability_modifier(self, name: str, action: Actions = None, *,
+                         desc: str = None, requirements: str = None, trigger: str = None,
+                         effect: str = None, frequency: str = None):
+        a = Ability(name=name, action=action, trigger=trigger,
+                    effect=effect, desc=desc, frequency=frequency, requirements=requirements)
+        self._ability_modifiers.append(a)
 
     def item(self, item: str, *, magic: bool = False):
         self._items.append((item, magic))

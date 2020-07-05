@@ -42,7 +42,7 @@ def add_hazard(body, h):
 
     stats = SE(hazard, "stats")
     add_disable(stats, h._disable)
-    add_ac_saves(stats, h._ac, h._saves)
+    add_ac_saves(stats, ac=h._ac, saves=h._saves, saves_desc=h._saves_desc)
     add_hardness(stats, hardness=h._hardness, immunities=h._immunities,
                  weaknesses=h._weaknesses, resistances=h._resistances)
     add_abilities(stats, h._reactive_abilities)
@@ -139,7 +139,7 @@ def add_creature(body, c):
     add_abilities(stats, c._interaction_abilities)
 
     stats = SE(creature, "stats")
-    add_ac_saves(stats, c._ac, c._saves)
+    add_ac_saves(stats, ac=c._ac, saves=c._saves, saves_desc=c._saves_desc)
     add_hp_immunities(stats, c._hp, c._immunities,
                       c._weaknesses, c._resistances)
     add_abilities(stats, c._automatic_abilities)
@@ -158,12 +158,23 @@ def add_creature(body, c):
 
 def add_spell_groups(elem, spell_groups):
     def add_spells(elem, spells):
+        last_el = None
         for sp in spells._spells:
             sp_e = SE(sps_e, "spell")
             sp_e.text = sp._name
             sp_e.tail = " "
+            last_el = sp_e
             if sp._id is not None:
                 sp_e.set("spellId", sp._id)
+            if sp._desc is not None:
+                sp_ee = SE(sps_e, "span")
+                sp_ee.text = " " + sp._desc
+                sp_ee.tail = ", "
+                last_el = sp_ee
+            else:
+                sp_e.tail = ", "
+        if last_el is not None:
+            last_el.tail = ';'
 
     for sg in spell_groups:
         rule = SE(elem, "rule", name=sg._name)
@@ -244,7 +255,7 @@ def add_hp_immunities(elem, hp, immunities, weaknesses, resistances):
         r_e.text = resistances
 
 
-def add_ac_saves(elem, ac, saves):
+def add_ac_saves(elem, *, ac, saves, saves_desc):
     div = SE(elem, "div")
     ac_e = SE(div, "ac")
     ac_e.text = ac
@@ -252,6 +263,9 @@ def add_ac_saves(elem, ac, saves):
         tag, val = s.split(" ")
         e = SE(div, tag)
         e.text = val
+    if saves_desc is not None:
+        e = SE(div, "span")
+        e.text = saves_desc
 
 
 def add_items(elem, items):

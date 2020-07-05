@@ -46,7 +46,7 @@ spells.spell("produce flame", id="236")
 spells.spell("shield", id="280")
 
 sg = c.spell_group("Rituals")
-spells = sg.spells()
+spells = sg.spells(lvl=None)
 spells.spell("nul-acrumi vazghul")
 spells.spell("planar ally")
 
