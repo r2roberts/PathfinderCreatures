@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Coalgnasher (Elite Nightmare)</title>
+    <link rel="stylesheet" href="CSS/creatures.css"/>
+    <script src="js/creatures.js"></script>
+  </head>
+  <body>
+    <creature>
+      <name>Coalgnasher (Elite Nightmare)</name>
+      <level>7</level>
+      <stats>
+        <traits>
+          <alignment>NE</alignment>
+          <size>Large</size>
+          <trait>Beast</trait>
+          <trait>Fiend</trait>
+        </traits>
+        <perception>+14; darkvision</perception>
+        <languages>Abyssal, Daemonic, Infernal</languages>
+        <skills>
+          <skill>Acrobatics +13,</skill>
+          <skill>Athletics +16,</skill>
+          <skill>Intimidation +14,</skill>
+          <skill>Survival +12</skill>
+        </skills>
+        <Str>+6</Str>
+        <Dex>+3</Dex>
+        <Con>+3</Con>
+        <Int>+1</Int>
+        <Wis>+4</Wis>
+        <Cha>+2</Cha>
+        <rule name="Smoke">
+          <span>(aura) 15 feet. The nightmare continually exhales black smoke that creates concealment in an aura around it. Nightmares and their riders can see through this smoke. A creature that begins its turn in the area becomes sickened 2 (DC 23 Fortitude negates) and is then temporarily immune to sickness from the smoke for 1 minute. The nightmare, its rider, any creature currently holding its breath (or that does not need to breathe), and any creature immune to poison are immune to the aura&#8217;s sickened effect, but not the concealment.</span>
+        </rule>
+      </stats>
+      <stats>
+        <div>
+          <ac>24</ac>
+          <Fort>+15</Fort>
+          <Ref>+15</Ref>
+          <Will>+12</Will>
+        </div>
+        <rule>
+          <hp>100</hp>
+          <resistances>fire 10</resistances>
+        </rule>
+      </stats>
+      <stats>
+        <speed>40 feet, fly 90 feet</speed>
+        <melee>
+          <a1></a1>
+          <span>jaws +16 [+11/+6](evil, magical), </span>
+          <damage>2d10+6 piercing plus 1d6 evil</damage>
+        </melee>
+        <melee>
+          <a1></a1>
+          <span>hoof +16 [+12/+8](agile, evil, fire, magical), </span>
+          <damage>1d8+6 bludgeoning plus 1d6 evil and 1d8 fire</damage>
+        </melee>
+        <rule name="Divine Innate Spells">
+          <dc>24, </dc>
+          <spells level="7th"><spell spellId="222">plane shift</spell> <span> (self and rider only)</span>;</spells>
+        </rule>
+        <rule name="Flaming Gallop">
+          <a2></a2>
+          <span>(fire) The nightmare Strides or Flies up to triple its Speed. Its hooves burst with intense flame, dealing 3d6 fire damage (DC 24 basic Reflex save) once to each creature other than the nightmare&#8217;s rider that the nightmare moves adjacent to during its gallop.</span>
+        </rule>
+      </stats>
+    </creature>
+  </body>
+</html>

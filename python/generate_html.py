@@ -14,5 +14,5 @@ def generate(c):
 
 
 if __name__ == "__main__":
-    from Kelleni import c
+    from Coalgnasher import c
     generate(c)
