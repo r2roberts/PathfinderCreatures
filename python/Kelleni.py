@@ -11,9 +11,9 @@ c.skills("Arcana +20", "Deception +20", "Diplomacy +20",
 c.attrs("Str +5", "Dex +4", "Con +6", "Int +4", "Wis +5", "Cha +3")
 
 c.ability_modifier("Coven",
-                   "A night hag adds dominate, nightmare, scrying, and spellwrack to her coven’s spells.")
+                   desc="A night hag adds dominate, nightmare, scrying, and spellwrack to her coven’s spells.")
 c.ability_modifier("Nightmare Rider",
-                   "When a night hag rides a nightmare, the nightmare also gains the night hag’s status bonus to saves against magic, and both the hag and rider benefit when the night hag uses her heartstone’s ethereal jaunt innate spell.")
+                   desc="When a night hag rides a nightmare, the nightmare also gains the night hag’s status bonus to saves against magic, and both the hag and rider benefit when the night hag uses her heartstone’s ethereal jaunt innate spell.")
 c.item("heartstone", magic=True)
 c.ac("30")
 c.saves("Fort +21", "Ref +19", "Will +20;",

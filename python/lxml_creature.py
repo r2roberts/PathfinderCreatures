@@ -135,6 +135,7 @@ def add_creature(body, c):
     skills = SE(stats, "skills")
     add_skills(skills, c._skills)
     add_attributes(stats, c._attrs)
+    add_abilities(stats, c._ability_modifiers)
     add_items(stats, c._items)
     add_abilities(stats, c._interaction_abilities)
 

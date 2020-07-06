@@ -182,7 +182,7 @@ class Creature(NPC):
     def attrs(self, *attrs):
         self._attrs = attrs
 
-    def ability_modifier(self, name: str, action: Actions = None, *,
+    def ability_modifier(self, name: str, *, action: Actions = None,
                          desc: str = None, requirements: str = None, trigger: str = None,
                          effect: str = None, frequency: str = None):
         a = Ability(name=name, action=action, trigger=trigger,
