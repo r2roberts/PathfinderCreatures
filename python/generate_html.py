@@ -4,7 +4,7 @@ import lxml_creature as lc
 def generate(c):
     print(lc.to_html(c))
 
-    filename = "../" + \
+    filename = "../creatures/" + \
         c._name.replace(' ', '_').replace('(', '').replace(')', '') + '.html'
     print(filename)
 
