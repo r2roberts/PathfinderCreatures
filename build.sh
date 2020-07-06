@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -v
 docker build -t rsqrdroberts/pathfindercreatures .
-#docker push rsqrdroberts/pathfindercreatures:latest
+docker push rsqrdroberts/pathfindercreatures:latest
