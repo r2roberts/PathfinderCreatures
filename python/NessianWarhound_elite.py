@@ -10,7 +10,7 @@ c.skills("Acrobatics +20", "Athletics +21",
 c.attrs("Str +6", "Dex +5", "Con +5", "Int –2", "Wis +4", "Cha –2")
 c.ac("30")
 c.saves("Fort +23", "Ref +21", "Will +18")
-c.hp("180")
+c.hp("170")
 c.immunities("fire")
 c.weaknesses("cold 10")
 c.reactive_ability("Hellish Revenge", action=Actions.REACTION, trigger="The Nessian warhound is critically hit by any Strike.",

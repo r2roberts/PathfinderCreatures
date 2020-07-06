@@ -18,7 +18,7 @@ c.item("heartstone", magic=True)
 c.ac("30")
 c.saves("Fort +21", "Ref +19", "Will +20;",
         desc="+2 status to all saves vs. magic, –2 to all saves if the night hag does not have her heartstone")
-c.hp("200")
+c.hp("190")
 c.immunities("sleep;")
 c.resistances("mental 10;")
 c.weaknesses("cold iron 10;")

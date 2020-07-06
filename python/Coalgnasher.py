@@ -12,7 +12,7 @@ c.interaction_ability("Smoke",
                       desc="(aura) 15 feet. The nightmare continually exhales black smoke that creates concealment in an aura around it. Nightmares and their riders can see through this smoke. A creature that begins its turn in the area becomes sickened 2 (DC 25 Fortitude negates) and is then temporarily immune to sickness from the smoke for 1 minute. The nightmare, its rider, any creature currently holding its breath (or that does not need to breathe), and any creature immune to poison are immune to the aura’s sickened effect, but not the concealment.")
 c.ac("26")
 c.saves("Fort +17", "Ref +17", "Will +14")
-c.hp("130")
+c.hp("120")
 c.resistances("fire 10")
 c.speed("40 feet, fly 90 feet")
 c.melee("jaws +18 [+13/+8](evil, magical)", Actions.ONE,
