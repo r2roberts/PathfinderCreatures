@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Rusty Mae</title>
+    <link rel="stylesheet" href="../CSS/creatures.css"/>
+    <script src="../js/creatures.js"></script>
+  </head>
+  <body>
+    <creature>
+      <name>Rusty Mae</name>
+      <level>10</level>
+      <stats>
+        <traits>
+          <unique>UNIQUE</unique>
+          <alignment>LE</alignment>
+          <size>LARGE</size>
+          <trait>HAG</trait>
+          <trait>HUMANOID</trait>
+        </traits>
+        <perception>+22; darkvision</perception>
+        <languages>Aklo, Common, Infernal, Jotun</languages>
+        <skills>
+          <skill>Acrobatics +17,</skill>
+          <skill>Athletics +21 (+23 to Grapple),</skill>
+          <skill>Deception +19,</skill>
+          <skill>Diplomacy +21,</skill>
+          <skill>Intimidation +17,</skill>
+          <skill>Religion +22,</skill>
+          <skill>Stealth +19</skill>
+        </skills>
+        <Str>+7</Str>
+        <Dex>+5</Dex>
+        <Con>+5</Con>
+        <Int>+4</Int>
+        <Wis>+6</Wis>
+        <Cha>+5</Cha>
+        <rule name="Coven">
+          <span>Rusty Mae adds earthbind, passwall, and spellwrack to her coven&#8217;s spells.</span>
+        </rule>
+      </stats>
+      <stats>
+        <div>
+          <ac>30</ac>
+          <Fort>+22</Fort>
+          <Ref>+16</Ref>
+          <Will>+19</Will>
+          <span>; +1 status to all saves vs. magic</span>
+        </div>
+        <rule>
+          <hp>155</hp>
+          <resistances>physical 10 (except bludgeoning)</resistances>
+        </rule>
+      </stats>
+      <stats>
+        <speed>40 feet</speed>
+        <melee>
+          <a1></a1>
+          <span>claws +23 (agile, cold iron, magical, reach 10 feet), </span>
+          <damage>2d8+13 slashing plus Grab and rust</damage>
+        </melee>
+        <rule name="Divine Rituals">
+          <dc>29, </dc>
+          <spells><spell>planar ally</spell>;</spells>
+        </rule>
+        <rule name="Bonds of Iron">
+          <a2></a2>
+          <span> (attack, conjuration, occult) Once per day, an annis hag can cause a cage built of cold iron fingernails to spring out of nothingness at a range of up to 30 feet, attempting an Athletics check to Grapple against the target&#8217;s Fortitude DC; if the target has a weakness to cold iron, the annis hag gains a +2 circumstance bonus to this check. Unlike a normal Grapple, the annis hag doesn&#8217;t need to be within reach and can move as she pleases, and a successful attempt lasts until the creature escapes (DC 29), causing the cage to crumble into rust. Any creature can attempt to destroy the cage by attacking it. It has an AC of 25, Hardness 14, and 56 Hit Points.</span>
+        </rule>
+        <rule name="Change Shape">
+          <a1></a1>
+          <span>(concentrate, occult, polymorph, transmutation) The hag can take on the appearance of any Medium female humanoid. This doesn&#8217;t change her Speed or her attack and damage bonuses with her Strikes but might change the damage type her Strikes deal (typically to bludgeoning).</span>
+        </rule>
+        <rule name="Rend">
+          <a1></a1>
+          <span>claw</span>
+        </rule>
+        <rule name="Rust">
+          <span>Rusty Mae&#8217;s claws cause metal to rapidly rust and corrode. If she succeeds at a claws Strike or Disarm attempt, she deals 2d6 damage(doubled on a critical hit) to a metal item the target is wearing or holding, ignoring its Hardness, in addition to the damage she deals to the target with her claws. If she hits an unattended metal item, the item takes 2d6 damage automatically. If a creature uses the Shield Block reaction with a metal shield against Rusty Mae&#8217;s claw attack, the shield is automatically broken, but no other item is affected on that attack.</span>
+        </rule>
+      </stats>
+    </creature>
+  </body>
+</html>
