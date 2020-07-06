@@ -20,11 +20,9 @@ c.hp("105")
 c.resistances("physical 5 (except bludgeoning)")
 
 c.speed("40 feet")
-c.melee("claws +18 (agile, magical, reach 10 feet)", Actions.ONE,
+c.melee("claws +18 [+14/+10] (agile, magical, reach 10 feet)", Actions.ONE,
         damage="2d8+8 cold iron slashing plus Grab")
-sg = c.spell_group("Divine Rituals", dc="29")
-sp = sg.spells(lvl=None)
-sp.spell("planar ally")
+
 c.offensive_ability("Bonds of Iron", Actions.TWO,
                     desc=" (attack, conjuration, occult) Once per day, an annis hag can cause a cage built of cold iron fingernails to spring out of nothingness at a range of up to 30 feet, attempting an Athletics check to Grapple against the target’s Fortitude DC; if the target has a weakness to cold iron, the annis hag gains a +2 circumstance bonus to this check. Unlike a normal Grapple, the annis hag doesn’t need to be within reach and can move as she pleases, and a successful attempt lasts until the creature escapes (DC 26), causing the cage to crumble into rust. Any creature can attempt to destroy the cage by attacking it. It has an AC of 21, Hardness 12, and 48 Hit Points.")
 
@@ -32,5 +30,3 @@ c.offensive_ability("Change Shape", Actions.ONE,
                     desc="(concentrate, occult, polymorph, transmutation) The hag can take on the appearance of any Medium female humanoid. This doesn’t change her Speed or her attack and damage bonuses with her Strikes but might change the damage type her Strikes deal (typically to bludgeoning).")
 
 c.offensive_ability("Rend", Actions.ONE, desc="claw")
-c.offensive_ability("Rust",
-                    desc="Rusty Mae’s claws cause metal to rapidly rust and corrode. If she succeeds at a claws Strike or Disarm attempt, she deals 2d6 damage(doubled on a critical hit) to a metal item the target is wearing or holding, ignoring its Hardness, in addition to the damage she deals to the target with her claws. If she hits an unattended metal item, the item takes 2d6 damage automatically. If a creature uses the Shield Block reaction with a metal shield against Rusty Mae’s claw attack, the shield is automatically broken, but no other item is affected on that attack.")
