@@ -320,6 +320,6 @@ def add_head(html, c):
        content="width=device-width, initial-scale=1.0")
     title = SE(head, "title")
     title.text = c._name
-    SE(head, "link", rel="stylesheet", href="CSS/creatures.css")
-    script = SE(head, "script", src="js/creatures.js")
+    SE(head, "link", rel="stylesheet", href="../CSS/creatures.css")
+    script = SE(head, "script", src="../js/creatures.js")
     script.text = ""
