@@ -11,7 +11,7 @@ c.skills("Acrobatics +12", "Athletics +16 (+18 to Grapple)", "Deception +13",
          "Diplomacy +11", "Intimidation +13", "Stealth +16")
 c.attrs("Str +6", "Dex +4", "Con +4", "Int +1", "Wis +4", "Cha +3")
 c.ability_modifier(
-    "Coven", desc="Rusty Mae adds earthbind, passwall, and spellwrack to her coven’s spells.")
+    "Coven", desc="Senna adds earthbind, passwall, and spellwrack to her coven’s spells.")
 
 c.ac("26")
 c.saves("Fort +18", "Ref +14", "Will +16",
